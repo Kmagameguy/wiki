@@ -1,3 +1,8 @@
 site_name: KevBot's Wiki
 repo_url: "https://github.com/kmagameguy/wiki"
+repo_name: "kmagameguy/wiki"
+edit_uri: "edit/main/docs"
+
 theme: readthedocs
+
+copyright: 2021 &copy; Kmagameguy - Licensed under GPLv3
