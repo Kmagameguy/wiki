@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Restic Backup - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Restic Backup";
+    var mkdocs_page_input_path = "general_guides/restic_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Restic Backup</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#todo">TODO:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pre-requisites">Pre-requisites:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#restic-documentation">Restic Documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resticprofile">ResticProfile</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#update-resticprofile">Update ResticProfile:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#list-available-options">List Available Options</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#run-a-backup">Run a Backup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inspecting-a-backup">Inspecting a Backup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restoring-backup">Restoring Backup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removing-snapshots">Removing Snapshots</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General guides &raquo;</li>
+        
+      
+    
+    <li>Restic Backup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/general_guides/restic_guide.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="restic-backup">Restic Backup</h1>
+<p>Restic is a snapshot-based, git-like, encrypted backup solution.  You can use Restic to define repos (vaults, essentially) which can contain broad or specific backups of files/folders.  It is an astonishingly effective tool and in combination with resticprofile, a helper utility which lets you define backup configurations as YAML, the system is simple to configure to boot.</p>
+<p>My current backups are on an External Drive in a repo labeled "ResticBackup".</p>
+<h2 id="todo">TODO:</h2>
+<p><em>I need to rewrite this article. I'm no longer using Windows as my daily driver, and I've switched from using resticprofile to autorestic.</em></p>
+<h2 id="pre-requisites">Pre-requisites:</h2>
+<ul>
+<li>Scoop (Windows only)</li>
+<li>Restic</li>
+<li>Restic Profile</li>
+</ul>
+<p><em>TODO: See if AutoRestic is a better tool than Restic Profile</em></p>
+<p>Windows Only: Manually add <code>resticprofile.exe</code> to path.
+Windows Only: Installation is living at <code>D:\Program Files\resticprofile</code></p>
+<p>Backups are defined in <code>profiles.yaml</code></p>
+<h2 id="restic-documentation">Restic Documentation</h2>
+<p>https://restic.readthedocs.io/en/latest/manual_rest.html</p>
+<h2 id="resticprofile">ResticProfile</h2>
+<h3 id="update-resticprofile">Update ResticProfile:</h3>
+<pre><code>$ resticprofile self-update
+</code></pre>
+<h3 id="list-available-options">List Available Options</h3>
+<pre><code>$ resticprofile profiles
+    Profiles available:
+      books:       (backup, snapshots)
+      default:     (backup)
+      development: (backup, snapshots)
+      music:       (backup, snapshots)
+      pictures:    (backup, snapshots)
+    Groups available:
+      full-backup:  music, pictures, development, books
+</code></pre>
+<h3 id="run-a-backup">Run a Backup</h3>
+<p>Run a full backup, using the group:</p>
+<pre><code>$ resticprofile --name &quot;full-backup&quot; backup
+</code></pre>
+<p>Alternatively, run for a single item:</p>
+<pre><code>$ resticprofile --name &quot;books&quot; backup
+</code></pre>
+<h3 id="inspecting-a-backup">Inspecting a Backup</h3>
+<p>List snapshots:</p>
+<pre><code>$ restic -r [backup_path] snapshots
+    enter password for repository:
+    ID       Date                Host  Tags      Directory
+    --------------------------------------------------
+    eeeeeeee 1969-01-01 01:00:00 REVAN documents /documents
+    ffffffff 1969-01-01 01:00:00 REVAN music     /music
+</code></pre>
+<h3 id="restoring-backup">Restoring Backup</h3>
+<p>From a snapshot:</p>
+<pre><code>$ restic -r [backup_path] restore [backup_id OR latest] --target [path_to_restore_to]
+</code></pre>
+<p>Restore specific path:</p>
+<pre><code>$ restic -r [backup_path] restore [backup_id OR latest] --path &quot;[path_to_restore]&quot; --target [path_to_restore_to]
+</code></pre>
+<h3 id="removing-snapshots">Removing Snapshots</h3>
+<p><em>TODO: add policy rules to resticprofile profiles.yaml to avoid manually managing snapshot history</em>
+- See Inspecting Backup to get snapshot IDs.
+- Forget the snapshot with:</p>
+<pre><code>$ restic -r [backup_path] forget [snapshot_id]
+</code></pre>
+<ul>
+<li>To clean up unreferenced data:</li>
+</ul>
+<pre><code>$ restic -r [backup_path] prune
+</code></pre>
+<ul>
+<li>OR use an all-in-one and drop all but latest snapshot:</li>
+</ul>
+<pre><code>$ restic -r [backup_path] forget --keep-last 1 --prune
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ripping_blurays/" class="btn btn-neutral float-right" title="Ripping Blu-Rays">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../examining_disk_usage_linux/" class="btn btn-neutral" title="Examining Disk Usage on Linux Systems"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../examining_disk_usage_linux/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ripping_blurays/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

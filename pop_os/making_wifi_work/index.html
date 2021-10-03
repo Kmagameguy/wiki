@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Making WiFi Work - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Making WiFi Work";
+    var mkdocs_page_input_path = "pop_os/making_wifi_work.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Making WiFi Work</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pre-requisites">Pre-Requisites</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#compiling-installing-the-driver">Compiling &amp; Installing the Driver</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuring-wifi-parameters">Configuring WiFi Parameters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#turn-off-wifi-power-management">Turn off WiFi Power Management</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#remove-backport-iwlwifi-dkms-package">Remove backport-iwlwifi-dkms Package</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#instruct-pop-os-to-prefer-ipv4-over-ipv6">Instruct Pop! OS to Prefer IPv4 over IPv6</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pop os &raquo;</li>
+        
+      
+    
+    <li>Making WiFi Work</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/pop_os/making_wifi_work.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="making-wifi-work">Making WiFi Work</h1>
+<p>At time of writing I'm using a 5GHz-band enabled USB dongle.  The first thing to do is to look up the model online and figure out what chipset the stick is built on.  In my case it's an RTL8812au (realtek).</p>
+<p>From there I was able to find a bootleg driver published by the aircrack team:</p>
+<p>https://github.com/aircrack-ng/rtl8812au</p>
+<h2 id="pre-requisites">Pre-Requisites</h2>
+<ul>
+<li>DKMS for automatically recompiling drivers after kernel updates</li>
+</ul>
+<pre><code>$ sudo apt install dkms
+</code></pre>
+<ul>
+<li>Build essential tools to compile the drivers</li>
+</ul>
+<pre><code>$ sudo apt install build-essential libelf-dev linux-headers-`uname -r`
+</code></pre>
+<h2 id="compiling-installing-the-driver">Compiling &amp; Installing the Driver</h2>
+<ol>
+<li>Clone the repo somewhere useful, such as /home/$USER/drivers</li>
+<li>Follow the README.md as different packages will probably work differently; in my case:</li>
+</ol>
+<pre><code>$ sudo make dkms_install
+</code></pre>
+<p>Alternatively if you'd like to manually compile &amp; install the driver:</p>
+<pre><code>sudo make &amp;&amp; make install
+</code></pre>
+<h2 id="configuring-wifi-parameters">Configuring WiFi Parameters</h2>
+<p>Usually this is enough to get a baseline WiFi connection going.  However in most cases the connection speed is abysmal.  Some further tweaks that can help get speeds back up to par are below. AFAICT just running through all three causes no harm (some may need to be re-applied after major updates):</p>
+<h3 id="turn-off-wifi-power-management">Turn off WiFi Power Management</h3>
+<ul>
+<li>Open the power management conf for editing:</li>
+</ul>
+<pre><code>$ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+</code></pre>
+<ul>
+<li>Change the value from 3 to 2 &amp; save.</li>
+</ul>
+<h3 id="remove-backport-iwlwifi-dkms-package">Remove backport-iwlwifi-dkms Package</h3>
+<p>See: https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588</p>
+<pre><code>$ sudo apt remove backport-iwlwifi-dkms
+</code></pre>
+<h3 id="instruct-pop-os-to-prefer-ipv4-over-ipv6">Instruct Pop! OS to Prefer IPv4 over IPv6</h3>
+<p>See: https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04</p>
+<p>Open the following conf file for editing:</p>
+<pre><code>$ sudo nano /etc/gai.conf
+</code></pre>
+<p>Then find the <code>Precedence ::ffff:0:0/96 10</code>  line and remove the leading <code>#</code> to uncomment the setting.  This will turn off power-saving mode on the WiFi dongle.</p>
+<hr />
+<p>Reboot after applying these changes and run a speedtest.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../working_with_firefox_profiles/" class="btn btn-neutral float-right" title="Firefox Profiles">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../logitech_g600_configuration/" class="btn btn-neutral" title="Configuring a Logitech G600 Mouse"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../logitech_g600_configuration/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../working_with_firefox_profiles/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

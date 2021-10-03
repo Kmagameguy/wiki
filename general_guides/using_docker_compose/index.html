@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>How to Use Docker-Compose - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to Use Docker-Compose";
+    var mkdocs_page_input_path = "general_guides/using_docker_compose.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">How to Use Docker-Compose</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installing-docker">Installing Docker</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installing-docker-compose">Installing Docker-Compose:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-a-docker-compose-file">Running a Docker-Compose File:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-a-docker-compose-app">Updating a Docker-Compose App</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#checking-what-docker-containers-are-running">Checking What Docker Containers Are Running</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stopping-a-running-container">Stopping a Running Container</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cleaning-out-old-containers-volumes-and-images">Cleaning Out Old Containers, Volumes, and Images</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General guides &raquo;</li>
+        
+      
+    
+    <li>How to Use Docker-Compose</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/general_guides/using_docker_compose.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="how-to-use-docker-compose">How to Use Docker-Compose</h1>
+<h2 id="installing-docker">Installing Docker</h2>
+<p>Use docker.io, which packages the docker engine in the debian/ubuntu philosophy (multi-package):</p>
+<pre><code>$ sudo apt install docker.io
+</code></pre>
+<h2 id="installing-docker-compose">Installing Docker-Compose:</h2>
+<pre><code>$ sudo curl -o /usr/local/bin/docker-compose -L &quot;https://github.com/docker/compose/releases/download/${DOCKER_VERSION}/docker-compose-$(uname -s)-$(uname -m)&quot;
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<p>where <code>${DOCKER_VERSION}</code> is the latest release ID.</p>
+<h2 id="running-a-docker-compose-file">Running a Docker-Compose File:</h2>
+<ol>
+<li>CD into the directory with the docker-compose YAML</li>
+<li>Pull the latest images for the applications defined in the docker-compose file, then launch a new container:</li>
+</ol>
+<pre><code>$ docker-compose pull
+
+  pulling [image]...done
+
+$ docker-compose up -d
+</code></pre>
+<p><em>Where the <code>-d</code> switch means to run the container in detached mode; important if you want to disconnect from the terminal or issue other commands</em></p>
+<h2 id="updating-a-docker-compose-app">Updating a Docker-Compose App</h2>
+<ol>
+<li>Pull the latest image and recreate the containers:</li>
+</ol>
+<pre><code>$ docker-compose pull
+
+  pulling [image]...done
+
+$ docker-compose up --force-recreate -d
+</code></pre>
+<p><em>You can also recreate a specific container by passing its name into the <code>docker-compose up</code> command like so:
+<code>docker-compose up --force-recreate -d &lt;container-name&gt;</code></em></p>
+<h2 id="checking-what-docker-containers-are-running">Checking What Docker Containers Are Running</h2>
+<p>You can inspect what's running like so:</p>
+<pre><code>docker ps
+</code></pre>
+<p>This will produce the names of the running containers and details about them (including uptime and healthchecks, where applicable).</p>
+<h2 id="stopping-a-running-container">Stopping a Running Container</h2>
+<p>You can stop a container like so:
+1. Use <code>docker ps</code> to get the ID of the container
+1. Stop the container:</p>
+<pre><code>docker container stop &lt;container-name&gt;
+</code></pre>
+<h2 id="cleaning-out-old-containers-volumes-and-images">Cleaning Out Old Containers, Volumes, and Images</h2>
+<p>After pulling a new image, recreating the container, and verifying that the new app image runs well, it's a good idea to wipe the old data from the system.  This will free up TONS of disk space as docker images can be several hundreds of megabytes large:
+1. Make sure everything is running before issuing the following command. It is destructive for anything not currently referenced by a running container:</p>
+<pre><code>docker system prune -a
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../verifying_file_hashes/" class="btn btn-neutral float-right" title="Verifying File Hashes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ripping_blurays/" class="btn btn-neutral" title="Ripping Blu-Rays"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../ripping_blurays/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../verifying_file_hashes/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

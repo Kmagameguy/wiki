@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>AMDGPU - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AMDGPU";
+    var mkdocs_page_input_path = "pop_os/controlling_amdgpu.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">AMDGPU</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#reading-gpu-properties">Reading GPU Properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#device-properties-directory">Device Properties Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reading-temperature-values">Reading Temperature Values</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reading-writing-fan-speed-values">Reading &amp; Writing Fan Speed Values</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pop os &raquo;</li>
+        
+      
+    
+    <li>AMDGPU</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/pop_os/controlling_amdgpu.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="amdgpu">AMDGPU</h1>
+<p>AMDGPU is the generic name for the AMD drivers for linux.  If you are using Pop! OS then the driver is already included in the distro's kernel. Nice.</p>
+<h2 id="reading-gpu-properties">Reading GPU Properties</h2>
+<p>Given the linux philosophy of "everything is a file", accessing GPU properties is trivial if you know where to look.  Some notable information is outlined below:</p>
+<h3 id="device-properties-directory">Device Properties Directory</h3>
+<p>Some of the enumerable values are system dependent, but they should (conceptually) be the same.  At time of writing here is where my device properties can be found:</p>
+<pre><code>$ ls /sys/class/drm/card0/device/hwmon/hwmon2/
+
+[..]
+temp1_crit             temp1_label           temp2_input       temp3_emergency
+temp1_crit_hyst        temp2_crit            temp2_label       temp3_input
+temp_1_emergency       temp2_crit_hyst       temp3_crit        temp3_label
+temp1_input            temp2_emergency       temp3_crit_hyst
+[...]
+</code></pre>
+<p>You can <code>cat</code>  the temp*_label files to see what each sensor is responsible for.  E.g.:
+- temp1 = edge temperature
+- temp2 = junction temperature
+- temp3 = mem temperature</p>
+<h3 id="reading-temperature-values">Reading Temperature Values</h3>
+<p>No one wants their system to overheat, so you may occasionally want to spot check the GPU's temperature sensors, specifically the edge value.  You can do that like so:</p>
+<pre><code>$ cat /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input
+
+52000 
+</code></pre>
+<p>Where <code>52000</code> = 52 centigrade with three zeroes attached.</p>
+<h3 id="reading-writing-fan-speed-values">Reading &amp; Writing Fan Speed Values</h3>
+<p><strong>Reading Values</strong>
+By default the fan speeds are operated in "automatic" mode by the system.  You can check the current fan speed like so:</p>
+<pre><code>$ cat /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+
+73
+</code></pre>
+<p>Where 73 = a fan speed of 28% (values are reported in PWM cycles, of which 255 is the maximum value.  A factor of 2.55 is used to convert back and forth.  E.g. multiply desired fan speed % by 2.55 to get the PWM value; or divide the PWM value by 2.55 to get the fan speed %).</p>
+<p><strong>Writing Fan Speed Values</strong>
+You can take manual control of the fan speed if you know the GPU will be under stress or don't trust the built-in automatic management engine.  Do so like this:</p>
+<p>First, assume manual control:</p>
+<pre><code>$ echo &quot;1&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+</code></pre>
+<p>Once set to manual mode you can push values to the fan speed controller.  First make sure you convert your desired fan speed % into a PWM value.</p>
+<p>For example, 50% * 2.55 = ﻿128 (rounded to nearest whole number).  Set it like so:</p>
+<pre><code>$ echo &quot;128&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+</code></pre>
+<p><strong>Resetting Fan Speed Management</strong>
+You may also resume automatic fan speed management. Do this like so:</p>
+<pre><code>$ echo &quot;2&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+</code></pre>
+<p>NOTE: You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.</p>
+<h2 id="references">References</h2>
+<p>The great Arch Wiki entry for the Fan Speed Control contains a section dedicated to the AMDGPU driver:</p>
+<p>https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control</p>
+<p>The <code>Issues</code> page for the AMDGPU driver can be useful if something seems broken.  Kernel updates are notorious for breaking the AMDGPU driver features; upgrade with caution:</p>
+<p>https://gitlab.freedesktop.org/drm/amd/-/issues</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fixing_the_audio_system/" class="btn btn-neutral float-right" title="System-Wide Loudness Equalization">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../general_guides/verifying_file_hashes/" class="btn btn-neutral" title="Verifying File Hashes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../general_guides/verifying_file_hashes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fixing_the_audio_system/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

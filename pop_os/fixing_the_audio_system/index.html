@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>System-Wide Loudness Equalization - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "System-Wide Loudness Equalization";
+    var mkdocs_page_input_path = "pop_os/fixing_the_audio_system.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../general_guides/verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">System-Wide Loudness Equalization</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assign-shortcuts-to-volume-up-down-steps">Assign Shortcuts to Volume Up / Down Steps</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fix-volume-up-down-increments">Fix Volume Up / Down Increments</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#check-current-increment-value">Check Current Increment Value</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fix-audio-popping">Fix Audio Popping</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#check-sound-cards-power-save-mode">Check Sound Card's Power Save Mode</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Pop os &raquo;</li>
+        
+      
+    
+    <li>System-Wide Loudness Equalization</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/pop_os/fixing_the_audio_system.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="system-wide-loudness-equalization">System-Wide Loudness Equalization</h1>
+<p>I've found Pop! OS' default dynamic range to be wayyyyy too large.  Even at ~15% volume dialogue vs. action sequences are like the difference between a whisper and a siren going off in your ears.  We can use PulseEffects to emulate Windows' "Loudness Equalization" feature across the whole system.</p>
+<h2 id="installation">Installation</h2>
+<p><a href="https://www.flathub.org/apps/details/com.github.wwmm.pulseeffects">PulseEffects</a> can be installed on bare metal or via flatpak.  It offers a GUI which can be used to enable all sorts of audio filters for pulseaudio.  For now I've decided on using the flatpak release, but I may switch to a bare metal install since flatpaks can't be set to launch on startup.
+1. Install the flatpak:</p>
+<pre><code>$ sudo flatpak install flathub com.github.wwmm.pulseeffects
+</code></pre>
+<p><em>Note: Install PulseEffects, NOT EasyEffects!</em></p>
+<h2 id="configuration">Configuration</h2>
+<p>Luckily another <a href="https://github.com/Digitalone1/EasyEffects-Presets">github user has done the hard work</a> for us and offers a repository with a Loudness Equalization preset.
+1. Clone the config files to somewhere useful
+1. Copy the LoudnessEqualizerPE.json file to the flatpak's data folder:
+    - `~/.var/app/com.github.wwmm.pulseeffects/config/PulseEffects/output/
+1.  Run PulseEffects
+1. Click the "Presets" button at the top, find the Loudness Equalization preset and load it
+1. Turn on the "Start Service at Login" setting in PulseEffects' settings menu
+1. Close the app and it will continue to operate in the background</p>
+<p><em>Note: You can also use PulseEffects to apply compressor, limiter, gate, and other effects to your microphone!</em></p>
+<hr />
+<h2 id="assign-shortcuts-to-volume-up-down-steps">Assign Shortcuts to Volume Up / Down Steps</h2>
+<p>For some reason Pop! OS doesn't assign key9s) to the mute / volume-up / volume-down shortcuts by default.  We can add our own using the Settings &gt; Keyboard &gt; Customize Shortcuts panel.</p>
+<ol>
+<li>Find the "Sound and Media" subcategory</li>
+<li>Add shortcuts to the volume keys, e.g.:<ul>
+<li>Volume Down =&gt; Super + F2</li>
+<li>Volume Up   =&gt; Super + F3</li>
+<li>Mute/Unmute =&gt; Super + F1
+As a bonus, these can then be used in Piper, if you have that set up!</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="fix-volume-up-down-increments">Fix Volume Up / Down Increments</h2>
+<p>By default, GNOME sets the volume up / down increments to 6%.  This makes it REALLY hard to find a volume level that lands in just the right spot between not-too-quiet and not-too-loud.  Luckily there is a setting we can tweak to set this however we'd like.</p>
+<h3 id="check-current-increment-value">Check Current Increment Value</h3>
+<p>First, let's see what the volume increment is set to:</p>
+<pre><code>$ gsettings get org.gnome.settings-daemon.plugins.media-keys volume-step
+</code></pre>
+<p>At time of writing, the default returned is "6" (i.e. 6%)
+To change the value we can use <code>gsettings</code> again, but with the "set" command.</p>
+<p><em>Note: the volume-step setting must be between values of 1 and 20</em></p>
+<p>For example, to set an increment of 2%:</p>
+<pre><code>$ gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 2
+</code></pre>
+<p>The change should take effect immediately.  You can check whether the change was accepted by re-running the <code>gsettings get</code> command above.</p>
+<hr />
+<h2 id="fix-audio-popping">Fix Audio Popping</h2>
+<p>I've noticed my line-out speakers seem to power down / power up frequently.  The indicator is a punchy popping sound whenever a new sound alert is triggered (it is especially bad whenever I receive a message notification in GChat over Google Chrome).</p>
+<p>It looks like you can fix that by turning off power-saving settings for the device.  Notes taken from here:
+https://askubuntu.com/questions/1230833/annoying-click-popping-sound-on-ubuntu-20-04</p>
+<h3 id="check-sound-cards-power-save-mode">Check Sound Card's Power Save Mode</h3>
+<pre><code>cat /sys/module/snd_hda_intel/parameters/power_save
+</code></pre>
+<p>If it returns a value of <code>1</code>, then power saving is enabled.  To temporarily turn this off to test for effectiveness, do this:</p>
+<pre><code>echo &quot;0&quot; | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+</code></pre>
+<p>If this change works then you can persist the configuration like so:</p>
+<pre><code>echo &quot;options snd_hda_intel power_save=0&quot; | sudo tee -a /etc/modprobe.d/audio_disable_powersave.conf
+</code></pre>
+<p>(Optional) You can also do the same for <code>power_save_controller</code> by following steps 1, 2, &amp; 3 above, but by replacing <code>power_save</code> with <code>power_save_controller</code>, AND changing <code>0</code> to <code>N</code>.</p>
+<p><strong>ALTERNATIVE OPTION</strong>
+Some users have reported that the above fix does not work for them.  As an alternative, the Arch Wiki explains how to disable power saving mode at the pulseaudio level:
+https://wiki.archlinux.org/title/Power_management#PulseAudio</p>
+<ul>
+<li>Open <code>/etc/pulse/default.pa</code> for editing</li>
+<li>Find the <code>load-module module-suspend-on-idle</code> line and comment it out</li>
+<li>Restart PulseAudio like so:</li>
+</ul>
+<pre><code>systemctl restart --user pulseaudio
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../logitech_g600_configuration/" class="btn btn-neutral float-right" title="Configuring a Logitech G600 Mouse">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../controlling_amdgpu/" class="btn btn-neutral" title="AMDGPU"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../controlling_amdgpu/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../logitech_g600_configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

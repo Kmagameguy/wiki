@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Examining Disk Usage on Linux Systems - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Examining Disk Usage on Linux Systems";
+    var mkdocs_page_input_path = "general_guides/examining_disk_usage_linux.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Examining Disk Usage on Linux Systems</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-gui-way">The GUI Way</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-terminal-way">The Terminal Way</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#check-overall-disk-usage">Check Overall Disk Usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#finding-large-files-folders">Finding Large Files &amp; Folders</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-ncdu">Installing NCDU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-ncdu">Using NCDU</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ripping_blurays/">Ripping Blu-Rays</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General guides &raquo;</li>
+        
+      
+    
+    <li>Examining Disk Usage on Linux Systems</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/general_guides/examining_disk_usage_linux.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="examining-disk-usage-on-linux-systems">Examining Disk Usage on Linux Systems</h1>
+<p>An important part of administering any system is making sure
+you're not at your disk space limit.  This is especially true
+when running something like a media center or NAS which may
+run nightly download or backup jobs.</p>
+<h2 id="the-gui-way">The GUI Way</h2>
+<p>Most linux distributions' file browsing app will also display
+free vs. used disk space in a bottom or top bar.  Alternatively
+you can always navigate to <code>/</code> and right-click somewhere to open
+a properties window.  Chances are you'll find what you're looking for.</p>
+<h2 id="the-terminal-way">The Terminal Way</h2>
+<p>In other cases it may be advantageous to examing disk usage
+from the command line.  The most common use case is during an <code>ssh</code>
+session where a GUI option isn't viable.  To examine disk usage
+in the terminal, do the following:</p>
+<h3 id="check-overall-disk-usage">Check Overall Disk Usage</h3>
+<pre><code>$ df -h
+
+Filesystem    Size  Used  Avail  Use%  Mounted on
+udev          1.9G     0   1.9G    0%  /dev
+tmpfs         390M  1.5M   388M    1%  /run
+/dev/disk1     28G    5G    21G   23%  /dev/disk1
+</code></pre>
+<h2 id="finding-large-files-folders">Finding Large Files &amp; Folders</h2>
+<p>As disk usage creeps up you may find yourself wanting
+to perfom an audit of your system.  In doing so, you
+may be able to find &amp; delete big files/folders that
+are no longer needed.  To do this, I recommend <code>ncdu</code>.</p>
+<p><code>ncdu</code> is an ncurses utility that builds a filetree
+of your system directories and lets you browse them
+in the terminal.  Folders are sorted from the supplied
+path by their size, which makes it easy to see what's
+taking up space on your disk.</p>
+<h3 id="installing-ncdu">Installing NCDU</h3>
+<pre><code>sudo apt install ncdu
+</code></pre>
+<p>and yer done.</p>
+<h3 id="using-ncdu">Using NCDU</h3>
+<pre><code>ncdu &lt;optional-filepath&gt;
+</code></pre>
+<p>If no filepath is supplied, ncdu will build a listing
+based on the current working directory.  It's really
+that simple!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restic_guide/" class="btn btn-neutral float-right" title="Restic Backup">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../gallium_os/fixing_the_audio_system/" class="btn btn-neutral" title="Fixing the Gallium OS Audio System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../gallium_os/fixing_the_audio_system/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../restic_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

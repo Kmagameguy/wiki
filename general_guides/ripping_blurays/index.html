@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Ripping Blu-Rays - KevBot's Wiki</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ripping Blu-Rays";
+    var mkdocs_page_input_path = "general_guides/ripping_blurays.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KevBot's Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">KevBot's Wiki</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Gallium os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../gallium_os/fixing_the_audio_system/">Fixing the Gallium OS Audio System</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">General guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../examining_disk_usage_linux/">Examining Disk Usage on Linux Systems</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../restic_guide/">Restic Backup</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Ripping Blu-Rays</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#makemkv">MakeMKV</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#handbrake">HandBrake</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dimensions">Dimensions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#filters">Filters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#video">Video</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#audio">Audio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#subtitles-optional">Subtitles (Optional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#converting-subtitles-to-srt">Converting Subtitles to .SRT</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../using_docker_compose/">How to Use Docker-Compose</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../verifying_file_hashes/">Verifying File Hashes</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Pop os</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/controlling_amdgpu/">AMDGPU</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/fixing_the_audio_system/">System-Wide Loudness Equalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/logitech_g600_configuration/">Configuring a Logitech G600 Mouse</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/making_wifi_work/">Making WiFi Work</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../pop_os/working_with_firefox_profiles/">Firefox Profiles</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KevBot's Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>General guides &raquo;</li>
+        
+      
+    
+    <li>Ripping Blu-Rays</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/kmagameguy/wiki/edit/master/docs/general_guides/ripping_blurays.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ripping-blu-rays">Ripping Blu-Rays</h1>
+<p>Ripping DVDs and Blu-Rays is an arcane art.  There are hundreds of configuration options to choose from that impact everything from filesize, picture &amp; audio quality, down to playability on different devices.  The notes below were taken as I was attempting to digitize my Blu-Ray DVD collection for use with PLEX &amp; Jellyfin.</p>
+<h2 id="makemkv">MakeMKV</h2>
+<p>MakeMKV is used to decrypt and rip the raw Blu-Ray data to disk.  It does this by wrapping everything inside MKV containers.  MakeMKV is in beta currently and therefore has a built-in (expiring) key.  Re-download the application monthly to refresh the key.
+1. Download MakeMKV: https://www.makemkv.com/download/
+1. Register the application using the beta key, found here: https://forum.makemkv.com/forum/viewtopic.php?f=5&amp;t=1053
+1. Insert the disc and click the big HDD icon to start scanning for tracks
+1. Select the tracks you want to rip (the largest track is usually the movie)
+1. Alternatively, you can rip the entire disk and then use VLC to whittle down the media you want to keep; this is easier if you're interested in saving extras like director's commentary tracks, subtitles, and special features  </p>
+<hr />
+<h2 id="handbrake">HandBrake</h2>
+<p>Below is a good preset for high-quality encodes from a Blu-Ray source.  Still need to investigate H264 vs H265.</p>
+<h3 id="summary">Summary</h3>
+<ol>
+<li>Format: Matroska (mkv)  </li>
+<li>Passthru Common Metadata: true  </li>
+<li>Save As: [Title Dependent].mkv | To: [Title Dependent]  </li>
+</ol>
+<h3 id="dimensions">Dimensions</h3>
+<ol>
+<li>Resolution Limit: 1080p Full HD  </li>
+<li>Maximum Size: 1920 x 1080  </li>
+<li>Anamorphic: Automatic  </li>
+<li>Pixel Aspect: 1:1  </li>
+<li>Scaled Size: [AutoCalc]  </li>
+<li>Optimal Size: True  </li>
+<li>Allow Upscaling: False  </li>
+<li>Display Size: [AutoCalc] | Automatic: True  </li>
+</ol>
+<h3 id="filters">Filters</h3>
+<ol>
+<li>ALL : off  </li>
+</ol>
+<h3 id="video">Video</h3>
+<ol>
+<li>Video Encoder: H.264 (x264)  </li>
+<li>Framerate: Same as source (Variable Framerate, 1. Constant Quality)  </li>
+<li>RF: 22 (or 20, depending on whether you want absolute quality)  </li>
+<li>Preset (slider): veryslow  </li>
+<li>Tune: Film  </li>
+<li>Profile: High  </li>
+<li>Level: [AutoCalc]  </li>
+</ol>
+<h3 id="audio">Audio</h3>
+<ol>
+<li>DTS-HD Passthrough, 5.1ch (if available; use next best otherwise)</li>
+</ol>
+<hr />
+<h3 id="subtitles-optional">Subtitles (Optional)</h3>
+<ol>
+<li>Delete Track List(s) &amp; Open Track Selection  </li>
+<li>Selection Behavior: First Track Matching Selected Languages  </li>
+<li>Available Languages (English) =&gt; Selected Languages  </li>
+<li>Add Foreign Audio Scan Pass: True  </li>
+<li>Add English subtitle track if default audio is not English: False  </li>
+<li>Add Closed Captions when available: False  </li>
+<li>Burn-In Behavior: None  </li>
+<li>Burn-In for deficient players:  <ul>
+<li>DVD Subtitles: False</li>
+<li>Blu-Ray Subtitles: False</li>
+</ul>
+</li>
+</ol>
+<h3 id="converting-subtitles-to-srt">Converting Subtitles to .SRT</h3>
+<p>Most (if not all?) blu-ray DVDs ship with PGS Subtitles.  These are image files and therefore cannot be easily extracted.  First rip the bluray to mkv, then do the following:
+1. Install <code>ffmpeg</code> and link it in PATH
+2. Check the subtitles type used in the MKV: <code>ffmpeg -i movie.mkv</code> (look for something like "Stream #0:0(eng): Subtitle: hdmvpgssubtitle
+3. Extract the subtitles with something like: <code>ffmpeg -i movie.mkv -c copy -map 0:2 sub.sup</code>
+4. Convert the .sup to .srt online: https://subtitletools.com/convert-to-srt-online</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../using_docker_compose/" class="btn btn-neutral float-right" title="How to Use Docker-Compose">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../restic_guide/" class="btn btn-neutral" title="Restic Backup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/kmagameguy/wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../restic_guide/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../using_docker_compose/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
