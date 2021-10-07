@@ -28,7 +28,8 @@ $ docker-compose pull
 $ docker-compose up -d
 ```
 
-_Where the `-d` switch means to run the container in detached mode; important if you want to disconnect from the terminal or issue other commands_
+???+ note docker-compose -d switch
+     _The `-d` switch means to run the container in detached mode; important if you want to disconnect from the terminal or issue other commands_
 
 ## Updating a Docker-Compose App
 
@@ -42,8 +43,9 @@ $ docker-compose pull
 $ docker-compose up --force-recreate -d
 ```
 
-_You can also recreate a specific container by passing its name into the `docker-compose up` command like so:
-`docker-compose up --force-recreate -d <container-name>`_
+???+ note Recreating specific containers
+     _You can also recreate a specific container by passing its name into the `docker-compose up` command like so:_
+     _`docker-compose up --force-recreate -d <container-name>`_
 
 ## Checking What Docker Containers Are Running
 
@@ -57,6 +59,7 @@ This will produce the names of the running containers and details about them (in
 
 ## Stopping a Running Container
 You can stop a container like so:
+
 1. Use `docker ps` to get the ID of the container
 1. Stop the container:
 
@@ -67,9 +70,9 @@ docker container stop <container-name>
 ## Cleaning Out Old Containers, Volumes, and Images
 
 After pulling a new image, recreating the container, and verifying that the new app image runs well, it's a good idea to wipe the old data from the system.  This will free up TONS of disk space as docker images can be several hundreds of megabytes large:
+
 1. Make sure everything is running before issuing the following command. It is destructive for anything not currently referenced by a running container:
 
 ```
-docker system prune -a
+docker system prune -af
 ```
-
