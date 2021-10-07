@@ -6,6 +6,7 @@ By default the Logitech team does not provide GHub or Logitech Gaming Software f
 libratbag is a daemon that provides an API for Piper to use when translating button assignments to input device signals.  The project supports many devices out of the box, including the G600. Fantastic.
 
 To install:
+
 - Add the PPA:
 
 ```
@@ -40,6 +41,7 @@ Next we'll install Piper which provides a GUI for configuring the mouse.
 
 ## Piper
 To install:
+
 - The PPA from the libratbag section also includes the Piper application.  Nice.  Install it with:
 
 ```
