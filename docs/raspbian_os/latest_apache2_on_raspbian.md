@@ -1,10 +1,10 @@
 # Install Latest Apache2 On Raspbian
 
 As with most distributions, raspbian does not always come packaged
-with the latest copy of the apache2 webserver.  Since we are using
-apache to serve our nextcloud instance, we'll want to replace the
-built-in repo with the latest upstream built for Debian.  This ensures
-we always get critical security fixes on time.
+with the latest copy of the apache2 webserver.  If you use apache2 to host
+a service (such as nextcloud) you may want to replace the
+built-in repo with the latest upstream build from Debian.  This ensures critical security
+fixes are available more quickly.
 
 ## How to Configure Raspbian
 
