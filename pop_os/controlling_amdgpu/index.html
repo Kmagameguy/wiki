@@ -14,7 +14,7 @@
     
     
       
-        <title>AMDGPU - KevBot's Wiki</title>
+        <title>Controlling AMDGPU - KevBot's Wiki</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amdgpu" class="md-skip">
+        <a href="#controlling-amdgpu" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AMDGPU
+              Controlling AMDGPU
             
           </span>
         </div>
@@ -427,12 +427,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          AMDGPU
+          Controlling AMDGPU
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        AMDGPU
+        Controlling AMDGPU
       </a>
       
         
@@ -694,7 +694,7 @@
                   </a>
                 
                 
-                <h1 id="amdgpu">AMDGPU</h1>
+                <h1 id="controlling-amdgpu">Controlling AMDGPU</h1>
 <p>AMDGPU is the generic name for the AMD drivers for linux.  If you are using Pop! OS then the driver is already included in the distro's kernel. Nice.</p>
 <h2 id="reading-gpu-properties">Reading GPU Properties</h2>
 <p>Given the linux philosophy of "everything is a file", accessing GPU properties is trivial if you know where to look.  Some notable information is outlined below:</p>
@@ -721,14 +721,14 @@ temp1_input            temp2_emergency       temp3_crit_hyst
 </code></pre>
 <p>Where <code>52000</code> = 52 centigrade with three zeroes attached.</p>
 <h3 id="reading-writing-fan-speed-values">Reading &amp; Writing Fan Speed Values</h3>
-<p><strong>Reading Values</strong>
+<p><strong>Reading Values</strong><br />
 By default the fan speeds are operated in "automatic" mode by the system.  You can check the current fan speed like so:</p>
 <pre><code>$ cat /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
 
 73
 </code></pre>
 <p>Where 73 = a fan speed of 28% (values are reported in PWM cycles, of which 255 is the maximum value.  A factor of 2.55 is used to convert back and forth.  E.g. multiply desired fan speed % by 2.55 to get the PWM value; or divide the PWM value by 2.55 to get the fan speed %).</p>
-<p><strong>Writing Fan Speed Values</strong>
+<p><strong>Writing Fan Speed Values</strong><br />
 You can take manual control of the fan speed if you know the GPU will be under stress or don't trust the built-in automatic management engine.  Do so like this:</p>
 <p>First, assume manual control:</p>
 <pre><code>$ echo &quot;1&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
@@ -737,16 +737,17 @@ You can take manual control of the fan speed if you know the GPU will be under s
 <p>For example, 50% * 2.55 = ﻿128 (rounded to nearest whole number).  Set it like so:</p>
 <pre><code>$ echo &quot;128&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
 </code></pre>
-<p><strong>Resetting Fan Speed Management</strong>
+<p><strong>Resetting Fan Speed Management</strong><br />
 You may also resume automatic fan speed management. Do this like so:</p>
 <pre><code>$ echo &quot;2&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
 </code></pre>
-<p>NOTE: You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.</p>
+<details class="note" open="open"><summary>Note</summary><p>You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.</p>
+</details>
 <h2 id="references">References</h2>
 <p>The great Arch Wiki entry for the Fan Speed Control contains a section dedicated to the AMDGPU driver:</p>
-<p>https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control</p>
+<p><a href="https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control">https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control</a></p>
 <p>The <code>Issues</code> page for the AMDGPU driver can be useful if something seems broken.  Kernel updates are notorious for breaking the AMDGPU driver features; upgrade with caution:</p>
-<p>https://gitlab.freedesktop.org/drm/amd/-/issues</p>
+<p><a href="https://gitlab.freedesktop.org/drm/amd/-/issues">https://gitlab.freedesktop.org/drm/amd/-/issues</a></p>
                 
                   
                     
@@ -755,7 +756,7 @@ You may also resume automatic fan speed management. Do this like so:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-03
+      Last update: 2021-10-07
     
   </small>
 </div>
