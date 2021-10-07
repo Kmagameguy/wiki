@@ -3,6 +3,10 @@ repo_url: "https://github.com/kmagameguy/wiki"
 repo_name: "kmagameguy/wiki"
 edit_uri: "edit/main/docs"
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+
 theme:
   name: material
   palette:
