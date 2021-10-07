@@ -780,7 +780,7 @@
 Windows Only: Installation is living at <code>D:\Program Files\resticprofile</code></p>
 <p>Backups are defined in <code>profiles.yaml</code></p>
 <h2 id="restic-documentation">Restic Documentation</h2>
-<p>https://restic.readthedocs.io/en/latest/manual_rest.html</p>
+<p><a href="https://restic.readthedocs.io/en/latest/manual_rest.html">https://restic.readthedocs.io/en/latest/manual_rest.html</a></p>
 <h2 id="resticprofile">ResticProfile</h2>
 <h3 id="update-resticprofile">Update ResticProfile:</h3>
 <pre><code>$ resticprofile self-update
@@ -820,9 +820,11 @@ Windows Only: Installation is living at <code>D:\Program Files\resticprofile</co
 <pre><code>$ restic -r [backup_path] restore [backup_id OR latest] --path &quot;[path_to_restore]&quot; --target [path_to_restore_to]
 </code></pre>
 <h3 id="removing-snapshots">Removing Snapshots</h3>
-<p><em>TODO: add policy rules to resticprofile profiles.yaml to avoid manually managing snapshot history</em>
-- See Inspecting Backup to get snapshot IDs.
-- Forget the snapshot with:</p>
+<p><em>TODO: add policy rules to resticprofile profiles.yaml to avoid manually managing snapshot history</em></p>
+<ul>
+<li>See Inspecting Backup to get snapshot IDs.</li>
+<li>Forget the snapshot with:</li>
+</ul>
 <pre><code>$ restic -r [backup_path] forget [snapshot_id]
 </code></pre>
 <ul>
@@ -843,7 +845,7 @@ Windows Only: Installation is living at <code>D:\Program Files\resticprofile</co
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-03
+      Last update: 2021-10-07
     
   </small>
 </div>
