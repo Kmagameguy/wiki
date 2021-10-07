@@ -711,7 +711,7 @@
                 <h1 id="making-wifi-work">Making WiFi Work</h1>
 <p>At time of writing I'm using a 5GHz-band enabled USB dongle.  The first thing to do is to look up the model online and figure out what chipset the stick is built on.  In my case it's an RTL8812au (realtek).</p>
 <p>From there I was able to find a bootleg driver published by the aircrack team:</p>
-<p>https://github.com/aircrack-ng/rtl8812au</p>
+<p><a href="https://github.com/aircrack-ng/rtl8812au">https://github.com/aircrack-ng/rtl8812au</a></p>
 <h2 id="pre-requisites">Pre-Requisites</h2>
 <ul>
 <li>DKMS for automatically recompiling drivers after kernel updates</li>
@@ -725,7 +725,7 @@
 </code></pre>
 <h2 id="compiling-installing-the-driver">Compiling &amp; Installing the Driver</h2>
 <ol>
-<li>Clone the repo somewhere useful, such as /home/$USER/drivers</li>
+<li>Clone the repo somewhere useful, such as <code>/home/$USER/drivers</code></li>
 <li>Follow the README.md as different packages will probably work differently; in my case:</li>
 </ol>
 <pre><code>$ sudo make dkms_install
@@ -745,11 +745,11 @@
 <li>Change the value from 3 to 2 &amp; save.</li>
 </ul>
 <h3 id="remove-backport-iwlwifi-dkms-package">Remove backport-iwlwifi-dkms Package</h3>
-<p>See: https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588</p>
+<p>See: <a href="https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588">https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588</a></p>
 <pre><code>$ sudo apt remove backport-iwlwifi-dkms
 </code></pre>
 <h3 id="instruct-pop-os-to-prefer-ipv4-over-ipv6">Instruct Pop! OS to Prefer IPv4 over IPv6</h3>
-<p>See: https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04</p>
+<p>See: <a href="https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04">https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04</a></p>
 <p>Open the following conf file for editing:</p>
 <pre><code>$ sudo nano /etc/gai.conf
 </code></pre>
@@ -764,7 +764,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-03
+      Last update: 2021-10-07
     
   </small>
 </div>
