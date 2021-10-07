@@ -21,7 +21,7 @@ Backups are defined in `profiles.yaml`
 
 ## Restic Documentation
 
-https://restic.readthedocs.io/en/latest/manual_rest.html
+<https://restic.readthedocs.io/en/latest/manual_rest.html>
 
 
 ## ResticProfile
@@ -88,6 +88,7 @@ $ restic -r [backup_path] restore [backup_id OR latest] --path "[path_to_restore
 ### Removing Snapshots
 
 _TODO: add policy rules to resticprofile profiles.yaml to avoid manually managing snapshot history_
+
 - See Inspecting Backup to get snapshot IDs.
 - Forget the snapshot with:
 

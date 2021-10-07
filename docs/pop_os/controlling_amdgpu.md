@@ -1,4 +1,4 @@
-# AMDGPU
+# Controlling AMDGPU
 AMDGPU is the generic name for the AMD drivers for linux.  If you are using Pop! OS then the driver is already included in the distro's kernel. Nice.
 
 ## Reading GPU Properties
@@ -36,7 +36,7 @@ $ cat /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input
 Where `52000` = 52 centigrade with three zeroes attached.
 
 ### Reading & Writing Fan Speed Values
-**Reading Values**
+**Reading Values**  
 By default the fan speeds are operated in "automatic" mode by the system.  You can check the current fan speed like so:
 
 ```
@@ -47,7 +47,7 @@ $ cat /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
 
 Where 73 = a fan speed of 28% (values are reported in PWM cycles, of which 255 is the maximum value.  A factor of 2.55 is used to convert back and forth.  E.g. multiply desired fan speed % by 2.55 to get the PWM value; or divide the PWM value by 2.55 to get the fan speed %).
 
-**Writing Fan Speed Values**
+**Writing Fan Speed Values**  
 You can take manual control of the fan speed if you know the GPU will be under stress or don't trust the built-in automatic management engine.  Do so like this:
 
 First, assume manual control:
@@ -64,20 +64,21 @@ For example, 50% * 2.55 = ﻿128 (rounded to nearest whole number).  Set it like
 $ echo "128" > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
 ```
 
-**Resetting Fan Speed Management**
+**Resetting Fan Speed Management**  
 You may also resume automatic fan speed management. Do this like so:
 
 ```
 $ echo "2" > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
 ```
 
-NOTE: You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.
+???+ note
+     You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.
 
 ## References
 The great Arch Wiki entry for the Fan Speed Control contains a section dedicated to the AMDGPU driver:
 
-https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control
+<https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control>
 
 The `Issues` page for the AMDGPU driver can be useful if something seems broken.  Kernel updates are notorious for breaking the AMDGPU driver features; upgrade with caution:
 
-https://gitlab.freedesktop.org/drm/amd/-/issues
+<https://gitlab.freedesktop.org/drm/amd/-/issues>

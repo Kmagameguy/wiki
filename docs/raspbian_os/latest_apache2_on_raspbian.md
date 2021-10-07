@@ -31,8 +31,8 @@ apache2 -v
 
 The commandline should print the now-installed apache2 version, which
 you can compare to the PPA's webpage.  The version on the system
-should match the latest version described in the PPA details:
-https://launchpad.net/~ondrej/+archive/ubuntu/apache2
+should match the latest version described in the PPA details:  
+<https://launchpad.net/~ondrej/+archive/ubuntu/apache2>
 
 You can also restart the server manually if you'd like to make sure the
 updates are in use:
