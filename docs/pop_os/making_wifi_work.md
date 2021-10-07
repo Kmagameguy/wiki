@@ -4,7 +4,7 @@ At time of writing I'm using a 5GHz-band enabled USB dongle.  The first thing to
 
 From there I was able to find a bootleg driver published by the aircrack team:
 
-https://github.com/aircrack-ng/rtl8812au
+<https://github.com/aircrack-ng/rtl8812au>
 
 
 ## Pre-Requisites
@@ -21,7 +21,7 @@ $ sudo apt install build-essential libelf-dev linux-headers-`uname -r`
 
 ## Compiling & Installing the Driver
 
-1. Clone the repo somewhere useful, such as /home/$USER/drivers
+1. Clone the repo somewhere useful, such as `/home/$USER/drivers`
 1. Follow the README.md as different packages will probably work differently; in my case:
 
 ```
@@ -51,7 +51,7 @@ $ sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 
 ### Remove backport-iwlwifi-dkms Package
 
-See: https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588
+See: <https://bugs.launchpad.net/ubuntu/+source/backport-iwlwifi-dkms/+bug/1869588>
 
 ```
 $ sudo apt remove backport-iwlwifi-dkms
@@ -59,7 +59,7 @@ $ sudo apt remove backport-iwlwifi-dkms
 
 ### Instruct Pop! OS to Prefer IPv4 over IPv6
 
-See: https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04
+See: <https://askubuntu.com/questions/764387/very-slow-internet-connection-on-ubuntu-16-04>
 
 Open the following conf file for editing:
 
