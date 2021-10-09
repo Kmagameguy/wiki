@@ -14,7 +14,7 @@
     
     
       
-        <title>Firefox Profiles - KevBot's Wiki</title>
+        <title>How to Upgrade a Postgres DB - KevBot's Wiki</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#firefox-profiles" class="md-skip">
+        <a href="#how-to-upgrade-a-postgres-db" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Firefox Profiles
+              How to Upgrade a Postgres DB
             
           </span>
         </div>
@@ -279,14 +279,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -309,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/examining_disk_usage_linux/" class="md-nav__link">
+      <a href="../examining_disk_usage_linux/" class="md-nav__link">
         Examining Disk Usage on Linux Systems
       </a>
     </li>
@@ -323,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/restic_guide/" class="md-nav__link">
+      <a href="../restic_guide/" class="md-nav__link">
         Restic Backup
       </a>
     </li>
@@ -337,144 +339,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/ripping_blurays/" class="md-nav__link">
+      <a href="../ripping_blurays/" class="md-nav__link">
         Ripping Blu-Rays
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../general_guides/upgrading_postgres/" class="md-nav__link">
-        How to Upgrade a Postgres DB
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../general_guides/using_docker_compose/" class="md-nav__link">
-        How to Use Docker-Compose
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../general_guides/verifying_file_hashes/" class="md-nav__link">
-        Verifying File Hashes
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Pop os
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Pop os" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Pop os
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../controlling_amdgpu/" class="md-nav__link">
-        Controlling AMDGPU
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fixing_the_audio_system/" class="md-nav__link">
-        System-Wide Loudness Equalization
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../logitech_g600_configuration/" class="md-nav__link">
-        Configuring a Logitech G600 Mouse
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making_wifi_work/" class="md-nav__link">
-        Making WiFi Work
       </a>
     </li>
   
@@ -497,12 +363,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Firefox Profiles
+          How to Upgrade a Postgres DB
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Firefox Profiles
+        How to Upgrade a Postgres DB
       </a>
       
         
@@ -520,15 +386,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-new-profile-using-profile-manager" class="md-nav__link">
-    Create A New Profile Using Profile Manager
+  <a href="#downgrading-postgresql-database" class="md-nav__link">
+    Downgrading PostgreSQL Database
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-the-launcher-entry" class="md-nav__link">
-    Create the Launcher Entry
+  <a href="#make-a-snapshot-of-the-database" class="md-nav__link">
+    Make a Snapshot of the Database
   </a>
   
 </li>
@@ -537,6 +403,140 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using_docker_compose/" class="md-nav__link">
+        How to Use Docker-Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verifying_file_hashes/" class="md-nav__link">
+        Verifying File Hashes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Pop os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pop os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Pop os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/controlling_amdgpu/" class="md-nav__link">
+        Controlling AMDGPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/fixing_the_audio_system/" class="md-nav__link">
+        System-Wide Loudness Equalization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/logitech_g600_configuration/" class="md-nav__link">
+        Configuring a Logitech G600 Mouse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/making_wifi_work/" class="md-nav__link">
+        Making WiFi Work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/working_with_firefox_profiles/" class="md-nav__link">
+        Firefox Profiles
+      </a>
     </li>
   
 
@@ -624,15 +624,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-new-profile-using-profile-manager" class="md-nav__link">
-    Create A New Profile Using Profile Manager
+  <a href="#downgrading-postgresql-database" class="md-nav__link">
+    Downgrading PostgreSQL Database
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-the-launcher-entry" class="md-nav__link">
-    Create the Launcher Entry
+  <a href="#make-a-snapshot-of-the-database" class="md-nav__link">
+    Make a Snapshot of the Database
   </a>
   
 </li>
@@ -649,32 +649,96 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/kmagameguy/wiki/edit/main/docs/pop_os/working_with_firefox_profiles.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/kmagameguy/wiki/edit/main/docs/general_guides/upgrading_postgres.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="firefox-profiles">Firefox Profiles</h1>
-<p>Firefox comes packaged with a profile management utility.  This is useful if you want to maintain completely separate "installations" of firefox for different use cases.  For example, maybe you want a "work" profile and "personal" profile in which neither share any bookmarks, history, downloads, etc.  Firefox profiles allow you to do this, and different profiles can even run concurrently with the help of customer launcher entries.</p>
-<h2 id="create-a-new-profile-using-profile-manager">Create A New Profile Using Profile Manager</h2>
-<p>Open terminal and run:</p>
-<pre><code>$ firefox --profilemanager
+                <h1 id="how-to-upgrade-a-postgres-db">How to Upgrade a Postgres DB</h1>
+<p>Whenever there is a major release of PostgreSQL, you may run into the following issue
+after an update:</p>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>PostgreSQL Database directory appears to contain a database; skipping initializatoin
+1969-01-01 00:00:00.505 UTC [1] FATAL: database files are incompatible with server
+1969-01-01 00:00:00.505 UTC [1] DETAIL: The data directory was initialized by PostgreSQL version 13, which is not compatible with this version 14.0</p>
+</div>
+<p>In these cases you will need to initialize a new db using postgreSQL:latest and then import
+the old records into the new database.  This guide assumes you are using docker-compose to manage
+your database.</p>
+<h2 id="downgrading-postgresql-database">Downgrading PostgreSQL Database</h2>
+<p>If you've run into the error above, then it's probably safe to assume your db is in bad shape.
+When this happened to me, my container was in a permanently "restarting" state.  You can work around
+this by downgrading PostgreSQL to the last good configuration:</p>
+<ul>
+<li>Edit your docker-compose file and specify the last good tag for your db image</li>
+</ul>
+<pre><code>image: postgres:13.4
 </code></pre>
-<p>From the GUI, choose "Create Profile" and give it a name.  Make note of this name as we'll be using it to configure the custom launcher.</p>
-<h2 id="create-the-launcher-entry">Create the Launcher Entry</h2>
-<p>Instead of running profile manager to launch the different instances of Firefox, we'll map the new one to a new launcher item.  Do that like so:</p>
-<pre><code>$ nano ~/.local/share/application/firefox-PROFILENAME.desktop
-
-[Desktop Entry]
-Encoding=UTF-8
-Name=Firefox PROFILENAME
-Exec=firefox -P PROFILENAME -no-remote --class PROFILENAMEProfile
-Icon=firefox
-Type=Application
-StartupNotify=True
-StartupWMClass=PROFILENAMEProfile
+<ul>
+<li>Then use <code>docker ps</code> to find the container ID of your running PostgreSQL instance</li>
+<li>Stop the container and remove the image</li>
+<li>Pull the db image for the newly added tag and recreate the container</li>
+</ul>
+<pre><code>$ docker container [container_id] stop
+$ docker container prune
+$ docker image prune -a
+$ docker-compose pull [service_name]
+$ docker-compose up --force-recreate -d [service_name]
 </code></pre>
-<p>Where "PROFILENAME" should be replaced with the name you gave the profile.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Once the container is up and running you can double check to see if your service(s) are working again</em>
+<em>I find this helpful to do before proceeding, just to make sure there isn't another issue to worry about</em></p>
+</div>
+<h2 id="make-a-snapshot-of-the-database">Make a Snapshot of the Database</h2>
+<p>After rolling back to a good state we're ready to start the upgrade.
+The first thing to do is make a backup of the current database.  Before doing this, though,
+you may want to stop any services that depend on your database.  Doing this makes sure
+none of the data is changed while you're peforming updates!</p>
+<ul>
+<li>First, start by jumping into the docker container's shell:</li>
+</ul>
+<pre><code>$ docker exec -it [container_id] bash
+root@[container_id]#/
+</code></pre>
+<ul>
+<li>Create a sql dump from the root shell:</li>
+</ul>
+<pre><code>$ pg_dumpall -U [db_username] &gt; /var/lib/postgresql/data/dump.sql
+</code></pre>
+<ul>
+<li>Enter your (root) db password when prompted</li>
+<li>If all goes well you should see clean output.  Congrats, your data is now backed up to the dump.sql file we specified in our command</li>
+</ul>
+<p><em><code>/var/lib/postgresql/data/</code> is the path to the docker volume.  If your path is different, make sure to change it.</em></p>
+<ul>
+<li>Stop the PostgreSQL container and move the <code>postgresql</code> folder to a backup location:</li>
+</ul>
+<pre><code>$ docker container [container_id] stop
+$ sudo mv /var/lib/postgresql /home/$USER/
+</code></pre>
+<ul>
+<li>Update the PostgreSQL tag in your docker-compose file:</li>
+</ul>
+<pre><code>$ image: postgres:14
+</code></pre>
+<ul>
+<li>Pull &amp; recreate the db container:</li>
+</ul>
+<pre><code>$ docker-compose pull postgres
+$ docker-compose up postgres --force-recreate -d
+</code></pre>
+<p><em>This will recreate the container's volume and initialize a fresh database</em></p>
+<ul>
+<li>Copy the database backup into the refreshed docker volume</li>
+<li>Import the data into the newly set up database</li>
+</ul>
+<pre><code>$ sudo mv /home/$USER/postgresql/data/dump.sql /var/lib/postgresql/data/
+$ docker exec -it [container_id] bash
+$ psql -U [db_user] -d [db_name] &lt; /var/lib/postgresql/data/dump.sql
+</code></pre>
+<p>If all goes well, you should be able to restart your services without any issues.</p>
                 
                   
                     
@@ -683,7 +747,7 @@ StartupWMClass=PROFILENAMEProfile
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-03
+      Last update: 2021-10-09
     
   </small>
 </div>
@@ -707,7 +771,7 @@ StartupWMClass=PROFILENAMEProfile
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../making_wifi_work/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Making WiFi Work" rel="prev">
+        <a href="../ripping_blurays/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ripping Blu-Rays" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -716,20 +780,20 @@ StartupWMClass=PROFILENAMEProfile
               <span class="md-footer__direction">
                 Previous
               </span>
-              Making WiFi Work
+              Ripping Blu-Rays
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../raspbian_os/latest_apache2_on_raspbian/" class="md-footer__link md-footer__link--next" aria-label="Next: Install Latest Apache2 On Raspbian" rel="next">
+        <a href="../using_docker_compose/" class="md-footer__link md-footer__link--next" aria-label="Next: How to Use Docker-Compose" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Install Latest Apache2 On Raspbian
+              How to Use Docker-Compose
             </div>
           </div>
           <div class="md-footer__button md-icon">
