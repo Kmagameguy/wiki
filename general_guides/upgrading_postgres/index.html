@@ -399,6 +399,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update-postgresql-create-a-fresh-database" class="md-nav__link">
+    Update PostgreSQL &amp; Create a Fresh Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-the-data-snapshot-into-the-new-database" class="md-nav__link">
+    Import the Data Snapshot into the New Database
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -637,6 +651,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update-postgresql-create-a-fresh-database" class="md-nav__link">
+    Update PostgreSQL &amp; Create a Fresh Database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-the-data-snapshot-into-the-new-database" class="md-nav__link">
+    Import the Data Snapshot into the New Database
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -718,6 +746,7 @@ root@[container_id]#/
 <pre><code>$ docker container [container_id] stop
 $ sudo mv /var/lib/postgresql /home/$USER/
 </code></pre>
+<h2 id="update-postgresql-create-a-fresh-database">Update PostgreSQL &amp; Create a Fresh Database</h2>
 <ul>
 <li>Update the PostgreSQL tag in your docker-compose file:</li>
 </ul>
@@ -730,6 +759,7 @@ $ sudo mv /var/lib/postgresql /home/$USER/
 $ docker-compose up postgres --force-recreate -d
 </code></pre>
 <p><em>This will recreate the container's volume and initialize a fresh database</em></p>
+<h2 id="import-the-data-snapshot-into-the-new-database">Import the Data Snapshot into the New Database</h2>
 <ul>
 <li>Copy the database backup into the refreshed docker volume</li>
 <li>Import the data into the newly set up database</li>
