@@ -4,8 +4,8 @@ Whenever there is a major release of PostgreSQL, you may run into the following 
 after an update:
 
 !!! failure
-    PostgreSQL Database directory appears to contain a database; skipping initializatoin
-    1969-01-01 00:00:00.505 UTC [1] FATAL: database files are incompatible with server
+    PostgreSQL Database directory appears to contain a database; skipping initialization  
+    1969-01-01 00:00:00.505 UTC [1] FATAL: database files are incompatible with server  
     1969-01-01 00:00:00.505 UTC [1] DETAIL: The data directory was initialized by PostgreSQL version 13, which is not compatible with this version 14.0
 
 In these cases you will need to initialize a new db using postgreSQL:latest and then import
