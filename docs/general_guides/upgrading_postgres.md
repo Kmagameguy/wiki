@@ -72,6 +72,8 @@ $ docker container [container_id] stop
 $ sudo mv /var/lib/postgresql /home/$USER/
 ```
 
+## Update PostgreSQL & Create a Fresh Database
+
 - Update the PostgreSQL tag in your docker-compose file:
 
 ```
@@ -86,6 +88,8 @@ $ docker-compose up postgres --force-recreate -d
 ```
 
 _This will recreate the container's volume and initialize a fresh database_
+
+## Import the Data Snapshot into the New Database
 
 - Copy the database backup into the refreshed docker volume
 - Import the data into the newly set up database
