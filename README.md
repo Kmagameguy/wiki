@@ -23,5 +23,5 @@ mkdocs serve
 Use the mkdocs utility to build & publish the static assets:
 
 ```
-mkdocs deploy gh-pages
+mkdocs gh-deploy
 ```
