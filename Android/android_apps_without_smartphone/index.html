@@ -1051,11 +1051,11 @@ For some apps (ridesharing comes to mind) this makes a lot of sense.  However fo
 (e.g. Amazon Care) this makes a lot less sense.  For me this is a worrying trend as it means:</p>
 <ol>
 <li>Only those privileged with the ability to afford smartphones can access these services.
-This is becomes a discriminatory practice and is anti-consumer</li>
-<li>It affords the vendor with more ability to abuse private info.  By restricting access
+This fast becomes a discriminatory practice and is fundamentally anti-consumer</li>
+<li>It affords the vendor more ability to abuse private info.  By restricting access
 to mobile apps, vendors are given easier access to mobile phone data that can then be
 slurped out of the device and sold off to advertisers, yuck</li>
-<li>For the privacy-conscious it makes separating employer concerns from personal ones</li>
+<li>For the privacy-conscious it makes separating employer concerns from personal ones difficult</li>
 </ol>
 <p>Number 3 is what prompted me to write this guide.  My employer is increasingly
 requiring users to access services which only provide mobile app access.  My phone isn't
@@ -1064,7 +1064,7 @@ privacy/rights for an employer to expect access to my personal device(s).  </p>
 <p>Enter <a href="https://www.android-x86.org/">android-x86</a> and <a href="https://www.virtualbox.org/">VirtualBox</a>.  No matter what your platform
 of choice is (Linux, Windows, macOS), you will be able to use this guide to run an
 emulated copy of the Android operating system.  This means you will be able to
-install and run any Android apps right on your desktop/laptop computer.</p>
+install and run Android apps right on your desktop/laptop computer.</p>
 <details class="note" open="open"><summary>This seems complicated...</summary><p><em>Yes, this is far from the most efficient way to run Android. <a href="https://www.bluestacks.com/">BlueStacks</a> is
  a more user friendly way to run an Android emulator.  Unfortunately I couldn't get
  BlueStacks 4 working on macOS Monterey, but it's just using VirtualBox under the hood anyway.
@@ -1125,9 +1125,11 @@ prefer the 64-bit version.  So, putting those together, here's what you should l
 </ul>
 <p>OSDN:</p>
 <ul>
-<li>Download the file that looks like this: "android-x86_64-8.1-r6.iso".</li>
+<li>Download the file that looks like this: "android-x86_64-8.1-r6.iso".<ul>
 <li>The "-8.1-r6" part of the filename will change over time.  That simply identifies the file version, so yours may look newer than what's written here</li>
 <li>Notice the "_64" part of the filename -- that identifies the file as the "64-bit" copy.  The 32-bit will just read "x86-8.1-r6" by contrast</li>
+</ul>
+</li>
 </ul>
 <p>Clicking the link will begin the download!  Wait for VirtualBox's installer and this ISO file to finish
 downloading before moving on to the next steps!</p>
@@ -1160,11 +1162,11 @@ downloading before moving on to the next steps!</p>
 </ol>
 <p>In this menu will be a few options we'll need to change.  Set them up like so:</p>
 <ol>
-<li>Name: This can be anything you want. I chose "Android"</li>
-<li>Machine Folder: Pick a place on your computer for VirtualBox to store its files.  I made a new "VirtualBox VMs" folder inside my documents folder</li>
-<li>Type: Linux</li>
-<li>Version: Linux 2.6 / 3.x / 4.x (64-bit)<ul>
-<li>Select "32-bit" if you chose to download a 32-bit ISO earlier!</li>
+<li><strong>Name:</strong> This can be anything you want. I chose "Android"</li>
+<li><strong>Machine Folder:</strong> Pick a place on your computer for VirtualBox to store its files.  I made a new "VirtualBox VMs" folder inside my documents folder</li>
+<li><strong>Type:</strong> Linux</li>
+<li><strong>Version:</strong> Linux 2.6 / 3.x / 4.x (64-bit)<ul>
+<li><em>Select "32-bit" if you chose to download a 32-bit ISO earlier!</em></li>
 </ul>
 </li>
 <li>Click "Continue"</li>
@@ -1188,7 +1190,7 @@ downloading before moving on to the next steps!</p>
 <li>Ensure "3D Acceleration" is OFF</li>
 <li>Click "OK"</li>
 </ol>
-<p>Now your virtual Machine is all set!  The next steps will get Android installed.  </p>
+<p>Now your virtual machine is all set!  The next steps will get Android installed.  </p>
 <h2 id="installing-android">Installing Android</h2>
 <h3 id="loading-the-android-iso">Loading the Android ISO</h3>
 <ol>
@@ -1216,8 +1218,8 @@ downloading before moving on to the next steps!</p>
 <li>Use the arrow keys to highlight the "Bootable" option at the bottom of the screen</li>
 <li>
 <p>Press "Enter" -- this will set the "Boot" flag in the grey highlighted row in the table up top</p>
-<details class="note" open="open"><summary>Not Sure if the Boot Flag Was Set?</summary><p>_This is a little weird the first time since the screen behaves differently from the preceding screens.
- If you examine the table on this screen, you'll see a header row and a data row.  The headers will read things like "Name", "Flags", "Part Type", "FS Type", etc.  Look at the "Flags" column.  If the word "boot" appears beneath it then you're good!  If not, use the arrow keys to highlight the "Bootable" option at the bottom of the screen again and press "Enter".</p>
+<details class="note" open="open"><summary>Not Sure if the Boot Flag Was Set?</summary><p><em>This is a little weird if you haven't created partitions before since the screen behaves differently from the preceding ones.
+ If you examine the table on this screen, you'll see a header row and a data row.  The headers will read things like "Name", "Flags", "Part Type", "FS Type", etc.  Look at the "Flags" column.  If the word "boot" appears beneath it then you're good!  If not, use the arrow keys to highlight the "Bootable" option at the bottom of the screen again and press "Enter".</em></p>
 </details>
 </li>
 <li>
@@ -1273,7 +1275,7 @@ downloading before moving on to the next steps!</p>
 <ul>
 <li>In my case, I used my work account since the purpose of this VM is to collect the junky apps required by my employer</li>
 </ul>
-<details class="note" open="open"><summary>Skipping Google Sign-In</summary><p>_You may optionally choose to skip the Google Sign-In step.  This may prevent you from installing Play store apps, though.  </p>
+<details class="note" open="open"><summary>Skipping Google Sign-In</summary><p><em>You may optionally choose to skip the Google Sign-In step.  This may prevent you from installing Play store apps, though.</em>  </p>
 </details>
 </li>
 <li>
@@ -1286,7 +1288,7 @@ downloading before moving on to the next steps!</p>
 <li>Click "Quickstep" on the Home Screen picker</li>
 <li>Click "Always"</li>
 </ol>
-<p>Congratulations! You now have Android running inside a VirtualMachine.  </p>
+<p>Congratulations! You now have Android running inside a Virtual Machine.  </p>
 <h2 id="updating-the-system">Updating the System</h2>
 <p>By default some of the included apps and services will likely be outdated.  We'll want to update them first
 before doing anything else:</p>
@@ -1297,8 +1299,8 @@ before doing anything else:</p>
 <li>Highlight the "Updates" tab if it's not selected by default</li>
 <li>Click the "Update All" button, if it's available</li>
 </ol>
-<p>I found the initial downloads can get stuck.  If this happens, try stopping the downloads and updating the apps individually.  You may have to work at this a little bit -- hey, I never said it'd be perfect!  </p>
-<p>You may also need to update Google Play Services separately.  To do that, click/drag from the top status bar to reveal the notification shade.  Look for a Google Play Services notification -- click that to open it's updater page and apply it.  </p>
+<p>I found the initial downloads can get stuck.  If this happens, try stopping the downloads and updating the apps individually.  You may have to work at this a little bit and a restart or two also can't hurt -- hey, I never said it'd be perfect!  </p>
+<p>You may also need to update Google Play Services separately.  To do that, click/drag from the top status bar downwards using your mouse to reveal the notification shade.  Look for a Google Play Services notification -- click that to open its updater page and apply it.  </p>
 <h2 id="taking-a-snapshot">Taking a Snapshot</h2>
 <p>One of the great benefits of Virtual Machines is the "Snapshot" feature.  This lets you create a permanent
 capture of the state of the system.  Further, you can take multiple of these and jump back-and-forth between them.
@@ -1312,10 +1314,10 @@ above again if we break something).</p>
 <li>Give the snapshot a name (I used "Base_Install") and add a description if you'd like</li>
 <li>Click "OK"</li>
 </ol>
-<p>Boom! Now you can return your VirtualMachine to this state at any time by highlighting it and clicking the "Restore" button.  </p>
+<p>Boom! Now you can return your Virtual Machine to this state at any time by highlighting it and clicking the "Restore" button.  </p>
 <h2 id="installing-an-app">Installing an App</h2>
-<p>Now you can go crazy.  Start up the VirtualMachine again and launch the Play Store.  You can click into the search
-bar and use your keyboard / enter key to type out a search.  For example, try finding "Adobe Acrobat".  You can
+<p>Now you can go crazy.  Start up the Virtual Machine again and launch the Play Store.  You can click into the search
+bar and use your keyboard and enter key to type out a search.  For example, try finding "Adobe Acrobat".  You can
 click on any of the search results to open the app's landing page.  From there, click the Install button and in a
 few moments you'll see the app icon appear on your home screen.  Clicking on the app icon will open it up, nice!  </p>
 <p>As a caveat, not all apps may work inside the emulator (I had trouble getting Amazon Care to run).  In these
