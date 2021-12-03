@@ -6,11 +6,11 @@ For some apps (ridesharing comes to mind) this makes a lot of sense.  However fo
 (e.g. Amazon Care) this makes a lot less sense.  For me this is a worrying trend as it means:
 
 1. Only those privileged with the ability to afford smartphones can access these services.
-This is becomes a discriminatory practice and is anti-consumer
-1. It affords the vendor with more ability to abuse private info.  By restricting access
+This fast becomes a discriminatory practice and is fundamentally anti-consumer
+1. It affords the vendor more ability to abuse private info.  By restricting access
 to mobile apps, vendors are given easier access to mobile phone data that can then be
 slurped out of the device and sold off to advertisers, yuck
-1. For the privacy-conscious it makes separating employer concerns from personal ones
+1. For the privacy-conscious it makes separating employer concerns from personal ones difficult
 
 Number 3 is what prompted me to write this guide.  My employer is increasingly
 requiring users to access services which only provide mobile app access.  My phone isn't
@@ -20,7 +20,7 @@ privacy/rights for an employer to expect access to my personal device(s).
 Enter [android-x86][android-x86] and [VirtualBox][vbox].  No matter what your platform
 of choice is (Linux, Windows, macOS), you will be able to use this guide to run an
 emulated copy of the Android operating system.  This means you will be able to
-install and run any Android apps right on your desktop/laptop computer.
+install and run Android apps right on your desktop/laptop computer.
 
 ???+ note "This seems complicated..."
      _Yes, this is far from the most efficient way to run Android. [BlueStacks][stacks] is
@@ -91,8 +91,8 @@ FOSSHUB:
 OSDN:
 
 - Download the file that looks like this: "android-x86_64-8.1-r6.iso".
-  - The "-8.1-r6" part of the filename will change over time.  That simply identifies the file version, so yours may look newer than what's written here
-  - Notice the "_64" part of the filename -- that identifies the file as the "64-bit" copy.  The 32-bit will just read "x86-8.1-r6" by contrast
+    - The "-8.1-r6" part of the filename will change over time.  That simply identifies the file version, so yours may look newer than what's written here
+    - Notice the "_64" part of the filename -- that identifies the file as the "64-bit" copy.  The 32-bit will just read "x86-8.1-r6" by contrast
 
 Clicking the link will begin the download!  Wait for VirtualBox's installer and this ISO file to finish
 downloading before moving on to the next steps!
@@ -123,11 +123,11 @@ downloading before moving on to the next steps!
   
 In this menu will be a few options we'll need to change.  Set them up like so:
 
-1. Name: This can be anything you want. I chose "Android"
-1. Machine Folder: Pick a place on your computer for VirtualBox to store its files.  I made a new "VirtualBox VMs" folder inside my documents folder
-1. Type: Linux
-1. Version: Linux 2.6 / 3.x / 4.x (64-bit)
-    - Select "32-bit" if you chose to download a 32-bit ISO earlier!
+1. **Name:** This can be anything you want. I chose "Android"
+1. **Machine Folder:** Pick a place on your computer for VirtualBox to store its files.  I made a new "VirtualBox VMs" folder inside my documents folder
+1. **Type:** Linux
+1. **Version:** Linux 2.6 / 3.x / 4.x (64-bit)
+    - _Select "32-bit" if you chose to download a 32-bit ISO earlier!_
 1. Click "Continue"
 1. Set the memory size to something like 4096MB.  You may also go as low as 2048MB if necessary; this depends on what your system has available.  If you're unsure, just avoid pushing the slider into the pink/red zones!
 1. Click "Continue"
@@ -149,7 +149,7 @@ In this menu will be a few options we'll need to change.  Set them up like so:
 1. Ensure "3D Acceleration" is OFF
 1. Click "OK"
   
-Now your virtual Machine is all set!  The next steps will get Android installed.  
+Now your virtual machine is all set!  The next steps will get Android installed.  
   
 ## Installing Android
   
@@ -181,8 +181,8 @@ The next steps will require you to use your keyboard (arrow keys and the enter k
 1. Press "Enter" -- this will set the "Boot" flag in the grey highlighted row in the table up top
   
     ???+ note "Not Sure if the Boot Flag Was Set?"        
-         _This is a little weird the first time since the screen behaves differently from the preceding screens.
-         If you examine the table on this screen, you'll see a header row and a data row.  The headers will read things like "Name", "Flags", "Part Type", "FS Type", etc.  Look at the "Flags" column.  If the word "boot" appears beneath it then you're good!  If not, use the arrow keys to highlight the "Bootable" option at the bottom of the screen again and press "Enter".
+         _This is a little weird if you haven't created partitions before since the screen behaves differently from the preceding ones.
+         If you examine the table on this screen, you'll see a header row and a data row.  The headers will read things like "Name", "Flags", "Part Type", "FS Type", etc.  Look at the "Flags" column.  If the word "boot" appears beneath it then you're good!  If not, use the arrow keys to highlight the "Bootable" option at the bottom of the screen again and press "Enter"._
   
 1. Use the arrow keys to highlight the "Write" option at the bottom of the screen
 1. Press "Enter"
@@ -237,7 +237,7 @@ You'll now see the installation wizard again:
     - In my case, I used my work account since the purpose of this VM is to collect the junky apps required by my employer
   
     ???+ note "Skipping Google Sign-In"
-         _You may optionally choose to skip the Google Sign-In step.  This may prevent you from installing Play store apps, though.  
+         _You may optionally choose to skip the Google Sign-In step.  This may prevent you from installing Play store apps, though._  
   
 1. Set your date and time as needed
 1. Optionally, turn on/off Google Services to your liking, scroll down and click "Accept"
@@ -247,7 +247,7 @@ You'll now see the installation wizard again:
 1. Click "Quickstep" on the Home Screen picker
 1. Click "Always"
   
-Congratulations! You now have Android running inside a VirtualMachine.  
+Congratulations! You now have Android running inside a Virtual Machine.  
   
 ## Updating the System
 
@@ -260,9 +260,9 @@ before doing anything else:
 1. Highlight the "Updates" tab if it's not selected by default
 1. Click the "Update All" button, if it's available
   
-I found the initial downloads can get stuck.  If this happens, try stopping the downloads and updating the apps individually.  You may have to work at this a little bit -- hey, I never said it'd be perfect!  
+I found the initial downloads can get stuck.  If this happens, try stopping the downloads and updating the apps individually.  You may have to work at this a little bit and a restart or two also can't hurt -- hey, I never said it'd be perfect!  
   
-You may also need to update Google Play Services separately.  To do that, click/drag from the top status bar to reveal the notification shade.  Look for a Google Play Services notification -- click that to open it's updater page and apply it.  
+You may also need to update Google Play Services separately.  To do that, click/drag from the top status bar downwards using your mouse to reveal the notification shade.  Look for a Google Play Services notification -- click that to open its updater page and apply it.  
   
 ## Taking a Snapshot
 
@@ -278,12 +278,12 @@ above again if we break something).
 1. Give the snapshot a name (I used "Base_Install") and add a description if you'd like
 1. Click "OK"
   
-Boom! Now you can return your VirtualMachine to this state at any time by highlighting it and clicking the "Restore" button.  
+Boom! Now you can return your Virtual Machine to this state at any time by highlighting it and clicking the "Restore" button.  
   
 ## Installing an App
 
-Now you can go crazy.  Start up the VirtualMachine again and launch the Play Store.  You can click into the search
-bar and use your keyboard / enter key to type out a search.  For example, try finding "Adobe Acrobat".  You can
+Now you can go crazy.  Start up the Virtual Machine again and launch the Play Store.  You can click into the search
+bar and use your keyboard and enter key to type out a search.  For example, try finding "Adobe Acrobat".  You can
 click on any of the search results to open the app's landing page.  From there, click the Install button and in a
 few moments you'll see the app icon appear on your home screen.  Clicking on the app icon will open it up, nice!  
   
