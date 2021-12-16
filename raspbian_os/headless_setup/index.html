@@ -1061,9 +1061,11 @@ their IP addresses.</p>
 a keyboard, mouse, or monitored connected up to the system. Slick!  </p>
 <h2 id="use-the-full-sd-card">Use the Full SD Card</h2>
 <p>By default Raspbian may not "see" the full capacity of the SD card.  This can
-be fixed quickly by issuing the following commands over the SSH connection:
-1. <code>raspi-config --expand-rootfs</code>
-1. <code>sudo reboot</code></p>
+be fixed quickly by issuing the following commands over the SSH connection:  </p>
+<ol>
+<li><code>raspi-config --expand-rootfs</code></li>
+<li><code>sudo reboot</code></li>
+</ol>
 <p>The second command will restart the system, naturally disconnecting your SSH connection.</p>
 <h2 id="optional-raspberry-pi-4-only-use-64bit-kernel">OPTIONAL - RASPBERRY PI 4 ONLY - Use 64bit Kernel</h2>
 <p>The newer Raspberry Pi 4 boards can run the 64-bit linux kernel. This can provide
