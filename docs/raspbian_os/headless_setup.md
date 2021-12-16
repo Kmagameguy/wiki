@@ -81,7 +81,8 @@ a keyboard, mouse, or monitored connected up to the system. Slick!
 ## Use the Full SD Card
 
 By default Raspbian may not "see" the full capacity of the SD card.  This can
-be fixed quickly by issuing the following commands over the SSH connection:
+be fixed quickly by issuing the following commands over the SSH connection:  
+  
 1. `raspi-config --expand-rootfs`
 1. `sudo reboot`
 
