@@ -88,7 +88,7 @@ be fixed quickly by issuing the following commands over the SSH connection:
 
 The second command will restart the system, naturally disconnecting your SSH connection.
   
-## OPTIONAL - RASPBERRY PI 4 ONLY - Use 64bit Kernel
+## OPTIONAL - RASPBERRY PI 4 ONLY: Use 64bit Kernel
 
 The newer Raspberry Pi 4 boards can run the 64-bit linux kernel. This can provide
 some performance improvements over the 32-bit kernel so it's usually worth enabling:  
@@ -111,21 +111,23 @@ The last thing we need is for the Pi's IP address to change on us periodically. 
   
 1. Make sure you have an active SSH connection to the Pi (see steps above)
 1. Type `sudo nano /etc/dhcpcd.conf` to open an in-terminal text editor (you'll be prompted for the pi user's password).  Add the following snippet to the very bottom of the file:  
+
+```
+interface wlan0 (or use eth0 if your Pi is connected to the router via ethernet cable)
+static ip_address=<DESIRED_IP>/24
+static routers=<ROUTER_IP>
+static domain_name_servers=<ROUTER_IP>
+```
   
-    ```
-    interface wlan0 (or use eth0 if your Pi is connected to the router via ethernet cable)
-    static ip_address=<DESIRED_IP>/24
-    static routers=<ROUTER_IP>
-    static domain_name_servers=<ROUTER_IP>
-    ```  
+Explanation:  
   
-    Where:  
+- routers: The IP address of your ROUTER (usually something like 192.168.0.1)
+- ip_address: The desired network address you want to reach your Pi at.  This should be the same as your Router's IP but with the final number modified, e.g.: 192.168.0.30
+    - _Don't exceed a value of 255_
+    - _Pick a number that isn't already in use by one of your connected devices_
+- domain_name_servers: The IHP address of your ROUTER (again)  
   
-    - routers: The IP address of your ROUTER (usually something like 192.168.0.1)
-    - ip_address: The desired network address you want to reach your Pi at.  This should be the same as your Router's IP but with the final number modified, e.g.: 192.168.0.30
-        - _Don't exceed a value of 255_
-        - _Pick a number that isn't already in use by one of your connected devices_
-    - domain_name_servers: The IHP address of your ROUTER (again)  
+Continuing with the edits:  
   
 1. Press Ctrl + X to set nano into "save" mode
 1. Press "Y" then return/enter to write the changes to disk
