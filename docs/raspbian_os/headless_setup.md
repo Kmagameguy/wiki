@@ -28,7 +28,7 @@ its other popular derivatives (Ubuntu, Pop!, Mint, etc).
 ### Hostname
 1. Enable "Set Hostname:" and change it to something you like
     
-    !!!+ warning
+    ???+ warning
          _Hostnames can ONLY use characters a-z, 0-9, and dash "-".
          Any other characters are invalid and may cause problems so
          avoid them!_
@@ -40,18 +40,22 @@ every time you try to connect to your pi
     - _We'll change this to proper ssh key authorization later._
   
 ### OPTIONAL: Configure WiFi
-If you'll be connecting to your network WiFi and not via ethernet cable:
+  
+If you'll be connecting to your network WiFi and not via ethernet cable:  
+  
 1. Enable "Configure wifi"
 1. Type in your network's name into the "SSID" field
 1. Type in your WiFi password into the "Password" field
 1. Select the appropriate entry for your part of the world in the "Wifi country" field
   
 ### Locale
+  
 1. Enable "Set locale settings"
 1. Select the appropriate time zone for your part of the world
 1. Type in the appropriate keyboard layout for your part of the world
   
 ### Persistent settings
+  
 1. Disable "Enable telemetry".  Yuck.  
   
 When all's done click "Save", then "WRITE".  After a short time the
@@ -86,24 +90,27 @@ The second command will restart the system, naturally disconnecting your SSH con
 ## OPTIONAL - RASPBERRY PI 4 ONLY - Use 64bit Kernel
 
 The newer Raspberry Pi 4 boards can run the 64-bit linux kernel. This can provide
-some performance improvements over the 32-bit kernel so it's usually worth enabling:
+some performance improvements over the 32-bit kernel so it's usually worth enabling:  
+  
 1. Over an SSH connection, run: `sudo nano /boot/config.txt`
 1. Add the following line to the very end of the file (on a new line):
     `arm_64bit=1`
 1. Press Ctrl + X to enter "save" mode, then "Y" to confirm the edits, then return/enter to commit the changes to disk
-1. Run: `sudo reboot`
+1. Run: `sudo reboot`  
   
-You can then verify whether the system is using the 64bit kernel:
+You can then verify whether the system is using the 64bit kernel:  
+  
 1. Reconnect over SSH
 1. Run `uname -a`
 1. The output should include `aarch64`. If you see this then you are on the 64bit kernel 
 
 ## Assign a Static IP Address
-
-The last thing we need is for the Pi's IP address to change on us periodically.  So, we'll set a static IP address to make sure we can always find it:
-
+  
+The last thing we need is for the Pi's IP address to change on us periodically.  So, we'll set a static IP address to make sure we can always find it:  
+  
 1. Make sure you have an active SSH connection to the Pi (see steps above)
-1. Type `sudo nano /etc/dhcpcd.conf` to open an in-terminal text editor (you'll be prompted for the pi user's password).  Add the following snippet to the very bottom of the file:
+1. Type `sudo nano /etc/dhcpcd.conf` to open an in-terminal text editor (you'll be prompted for the pi user's password).  Add the following snippet to the very bottom of the file:  
+  
     ```
     interface wlan0 (or use eth0 if your Pi is connected to the router via ethernet cable)
     static ip_address=<DESIRED_IP>/24
@@ -111,12 +118,14 @@ The last thing we need is for the Pi's IP address to change on us periodically. 
     static domain_name_servers=<ROUTER_IP>
     ```  
   
-    Where:
+    Where:  
+  
     - routers: The IP address of your ROUTER (usually something like 192.168.0.1)
     - ip_address: The desired network address you want to reach your Pi at.  This should be the same as your Router's IP but with the final number modified, e.g.: 192.168.0.30
         - _Don't exceed a value of 255_
         - _Pick a number that isn't already in use by one of your connected devices_
-    - domain_name_servers: The IHP address of your ROUTER (again)
+    - domain_name_servers: The IHP address of your ROUTER (again)  
+  
 1. Press Ctrl + X to set nano into "save" mode
 1. Press "Y" then return/enter to write the changes to disk
 1. Lastly enter the command `sudo reboot` and press return/enter  
@@ -135,31 +144,43 @@ the ROOT account:
 1. SSH to the Pi
 1. Run `sudo passwd` to set a root user password (remember it for now but it'll be irrelevant later)
 1. Run `sudo nano /etc/ssh/sshd_config` to open the ssh config file in nano for editing
-1. Change this line:
-    `#PermitRootLogin prohibit-password`
-    TO
-    `PermitRootLogin yes`
-    (note the missing octothorpe)
+1. Change this line:  
+  
+    `#PermitRootLogin prohibit-password`  
+  
+    TO  
+  
+    `PermitRootLogin yes`  
+  
+    (note the missing octothorpe)  
+  
 1. Press Ctrl + X, Y, return/enter to save the changes
-1. Run `sudo reboot`
-
+1. Run `sudo reboot`  
+  
 Now, we'll connect as the ROOT user instead of the Pi user once the system starts
-up again:
+up again:  
+  
 - Run `ssh root@<pi_hostname_or_ip_address>` and enter the ROOT password you just set  
   
 Change the "pi" username to something new.  This can be any name you want so long
-as your remember it:
+as your remember it:  
+  
 1. Run `usermod -l <new_user> pi usermod -m -d /home/<new_user> <new_user>`
     - Example: `usermod -l larry pi usermod -m -d /home/larry larry`
 1. Drop the SSH connection with Ctrl + D
 1. Reconnect the SSH session using the new username (same password as the old pi user): `<new_user>@<pi_hostname_or_ip_address>`
 1. Run `sudo passwd -l root` to disable the root user entirely (for security)
 1. Run `sudo nano /etc/ssh/sshd_config`
-1. Undo the changes you made earlier:
-    `PermitRootLogin yes`
-    BACK TO
-    `#PermitRootLogin prohibit-password`
-    (note the return of octothorpe)
+1. Undo the changes you made earlier:  
+  
+    `PermitRootLogin yes`  
+  
+    BACK TO  
+  
+    `#PermitRootLogin prohibit-password`  
+  
+    (note the return of octothorpe)  
+  
 1. Drop the SSH connection with Ctrl + D  
   
 Now you have a new username and the ROOT account is protected.  
@@ -182,23 +203,29 @@ a guide for your operating system:
     _Never ever ever share the myserver\_rsa file.  This is your private key._
     _Think of it like a password -- you don't want anyone to know it.  The .pub file on the other hand you can share around wherever you like!_
 1. Install the new PUBLIC key on the server: `ssh-copy-id -i /path/to/myserver_rsa.pub <pi_username>@<pi_hostname_or_ip_address>`
-1. SSH to the Pi -- it should happen without a password prompt (unless you added a password to the SSH key itself)
-
+1. SSH to the Pi -- it should happen without a password prompt (unless you added a password to the SSH key itself)  
+  
 With our key/pair set up we can disable ssh connections via plain-old password
-authentication for even better security:
+authentication for even better security:  
+  
 1. Over an SSH connection, run `sudo nano /etc/ssh/sshd_config` to edit the Pi's ssh config again
-1. Change the following:
-    `#PasswordAuthentication yes`
-    TO
-    `PasswordAuthentication no`
-    (note the missing octothorpe)
+1. Change the following:  
+  
+    `#PasswordAuthentication yes`  
+  
+    TO  
+  
+    `PasswordAuthentication no`  
+  
+    (note the missing octothorpe)  
+  
 1. Press Ctrl + X, Y, return/enter to save the changes
-1. Run: `sudo reboot`
-
+1. Run: `sudo reboot`  
+  
 And that is pretty much it!  From here you may want to explore other security
 software, such as a firewall (UFW) and an intrusion detector/logger (Fail2Ban),
 especially if this Pi will be serving applications that are accessible from the public internet.  Other good choices include wireguard, which will set up a VPN
 that you can use to access your network on the go, or NGINX which could be used
-as a simple webserver or reverse proxy.
-
+as a simple webserver or reverse proxy.  
+  
 [pi-imager]:https://www.raspberrypi.com/software/
