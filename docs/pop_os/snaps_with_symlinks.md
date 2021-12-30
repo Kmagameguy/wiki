@@ -15,7 +15,7 @@ directories in your `home` folder are symlinked to paths on a separate drive.
 WHAT.  
   
 Here is the post in question:  
-https://forum.snapcraft.io/t/some-snaps-will-only-launch-the-first-time/18509/12  
+<https://forum.snapcraft.io/t/some-snaps-will-only-launch-the-first-time/18509/12>  
   
 I don't know if this "ogra" user is a representative of canonical or not but
 their reply is exactly the sort of garbage reply that drives people away from
