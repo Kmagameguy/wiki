@@ -5,6 +5,7 @@ Ripping CDs has, perhaps unsurprisingly, fallen out of popularity these days.  U
 ## A Better CD Encoder  
   
 Similar to EAC, ABCDE will make CD ripping simple.  And, yes, that's really the name, short-form for **A** **B**etter **CD** **E**ncoder; yes I think it's dumb too.  Anyway, this tool is great for a few reasons:
+
 1. You can use musicbrainz to automatically tag your audio files
 1. You can specify the file structure & naming conventions
 1. It supports all the popular file formats (ogg/vorbis, flac, mp3, etc)
@@ -22,6 +23,7 @@ $ sudo apt install abcde -y
 ## Configuration  
   
 `abcde` has a LOT of configuration options and honestly, I had a hard time finding good documentation for it all.  Below is a sample configuration file that will rip to the .FLAC format.  To use it:
+
 1. Create an `.abcde.conf` file in your `$HOME` directory
 1. Copy and paste the contents from the sample below into the conf file and save it
     - _I have included some commented lines which can be used to encode to other formats, such as ogg/vorbis for example_
@@ -186,16 +188,18 @@ mungefilename ()
 ## Using ABCDE
 
 Now that the configuration is...well...configured, we are ready to rip:
+
 1. Insert a CD into the disc drive (you _do_ have one, don't you?)
 1. Fire up your terminal
 1. Simply run `abcde`
   
-And that's it! ABCDE will read your configuration file and begin checking out your disk.  If you used the
+And that's it! `abcde` will read your configuration file and begin checking out your disk.  If you used the
 config above there will be a few interactive questions:
+
 1. First, it will try to match the disc with musicbrainz's database; With any luck you'll be able to use the first result
 1. Second it will ask if you want to modify any of the metadata info; I usually just pick "no"
 1. Third it will ask if the disc should rip in single-artist or multi-artist mode
 1. It will also try to fetch album art; You can supply your own link if you'd prefer 
     - _You may need to install `imagemagick` for this step to work, or you can remove "getalbumart" from the abcde "ACTIONS" manifest_  
   
-From there ABCDE will print its progress as it rips & encodes your music.  There isn't much more to it!
+From there `abcde` will print its progress as it rips & encodes your music.  There isn't much more to it!
