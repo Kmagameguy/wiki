@@ -1029,18 +1029,24 @@ mungefilename ()
 }
 </code></pre>
 <h2 id="using-abcde">Using ABCDE</h2>
-<p>Now that the configuration is...well...configured, we are ready to rip:
-1. Insert a CD into the disc drive (you <em>do</em> have one, don't you?)
-1. Fire up your terminal
-1. Simply run <code>abcde</code></p>
-<p>And that's it! ABCDE will read your configuration file and begin checking out your disk.  If you used the
-config above there will be a few interactive questions:
-1. First, it will try to match the disc with musicbrainz's database; With any luck you'll be able to use the first result
-1. Second it will ask if you want to modify any of the metadata info; I usually just pick "no"
-1. Third it will ask if the disc should rip in single-artist or multi-artist mode
-1. It will also try to fetch album art; You can supply your own link if you'd prefer 
-    - <em>You may need to install <code>imagemagick</code> for this step to work, or you can remove "getalbumart" from the abcde "ACTIONS" manifest</em>  </p>
-<p>From there ABCDE will print its progress as it rips &amp; encodes your music.  There isn't much more to it!</p>
+<p>Now that the configuration is...well...configured, we are ready to rip:</p>
+<ol>
+<li>Insert a CD into the disc drive (you <em>do</em> have one, don't you?)</li>
+<li>Fire up your terminal</li>
+<li>Simply run <code>abcde</code></li>
+</ol>
+<p>And that's it! <code>abcde</code> will read your configuration file and begin checking out your disk.  If you used the
+config above there will be a few interactive questions:</p>
+<ol>
+<li>First, it will try to match the disc with musicbrainz's database; With any luck you'll be able to use the first result</li>
+<li>Second it will ask if you want to modify any of the metadata info; I usually just pick "no"</li>
+<li>Third it will ask if the disc should rip in single-artist or multi-artist mode</li>
+<li>It will also try to fetch album art; You can supply your own link if you'd prefer <ul>
+<li><em>You may need to install <code>imagemagick</code> for this step to work, or you can remove "getalbumart" from the abcde "ACTIONS" manifest</em>  </li>
+</ul>
+</li>
+</ol>
+<p>From there <code>abcde</code> will print its progress as it rips &amp; encodes your music.  There isn't much more to it!</p>
 
   <hr>
 <div class="md-source-file">
