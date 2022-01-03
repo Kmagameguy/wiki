@@ -852,21 +852,27 @@
 <h1 id="ripping-cds">Ripping CDs</h1>
 <p>Ripping CDs has, perhaps unsurprisingly, fallen out of popularity these days.  Unfortunately the gold standard, Exact Audio Copy (EAC), doesn't exist for GNU/Linux (OK, you <em>could</em> run it via WINE but that's a lot of work).  Luckily there are a couple tools still clinging to life, one of which will be the focus of this guide.  It is called <code>abcde</code>.  </p>
 <h2 id="a-better-cd-encoder">A Better CD Encoder</h2>
-<p>Similar to EAC, ABCDE will make CD ripping simple.  And, yes, that's really the name, short-form for <strong>A</strong> <strong>B</strong>etter <strong>CD</strong> <strong>E</strong>ncoder; yes I think it's dumb too.  Anyway, this tool is great for a few reasons:
-1. You can use musicbrainz to automatically tag your audio files
-1. You can specify the file structure &amp; naming conventions
-1. It supports all the popular file formats (ogg/vorbis, flac, mp3, etc)
-1. You can encode multiple formats at once -- e.g. flac for lossless backup; mp3 for files-on-the-go
-1. All settings can be stored in a single config file which you can commit to version control or include in system backups  </p>
+<p>Similar to EAC, ABCDE will make CD ripping simple.  And, yes, that's really the name, short-form for <strong>A</strong> <strong>B</strong>etter <strong>CD</strong> <strong>E</strong>ncoder; yes I think it's dumb too.  Anyway, this tool is great for a few reasons:</p>
+<ol>
+<li>You can use musicbrainz to automatically tag your audio files</li>
+<li>You can specify the file structure &amp; naming conventions</li>
+<li>It supports all the popular file formats (ogg/vorbis, flac, mp3, etc)</li>
+<li>You can encode multiple formats at once -- e.g. flac for lossless backup; mp3 for files-on-the-go</li>
+<li>All settings can be stored in a single config file which you can commit to version control or include in system backups  </li>
+</ol>
 <h2 id="installation">Installation</h2>
 <p><code>abcde</code> is included in most package managers so head over to the terminal.  I use all debian-based systems, so for me the installation command is simply:</p>
 <pre><code>$ sudo apt install abcde -y
 </code></pre>
 <h2 id="configuration">Configuration</h2>
-<p><code>abcde</code> has a LOT of configuration options and honestly, I had a hard time finding good documentation for it all.  Below is a sample configuration file that will rip to the .FLAC format.  To use it:
-1. Create an <code>.abcde.conf</code> file in your <code>$HOME</code> directory
-1. Copy and paste the contents from the sample below into the conf file and save it
-    - <em>I have included some commented lines which can be used to encode to other formats, such as ogg/vorbis for example</em></p>
+<p><code>abcde</code> has a LOT of configuration options and honestly, I had a hard time finding good documentation for it all.  Below is a sample configuration file that will rip to the .FLAC format.  To use it:</p>
+<ol>
+<li>Create an <code>.abcde.conf</code> file in your <code>$HOME</code> directory</li>
+<li>Copy and paste the contents from the sample below into the conf file and save it<ul>
+<li><em>I have included some commented lines which can be used to encode to other formats, such as ogg/vorbis for example</em></li>
+</ul>
+</li>
+</ol>
 <pre><code># -----------------$HOME/.abcde.conf-----------------
 # 
 # A sample configuration file to convert cds to 
