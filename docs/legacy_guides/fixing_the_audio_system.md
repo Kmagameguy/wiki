@@ -1,4 +1,8 @@
-# System-Wide Loudness Equalization
+# System-Wide Loudness Equalization on Pop! OS
+
+???+ warning "Deprecated Guide"
+     As of Jan 2022 I have started to experiment with Pipewire & EasyEffects.  The guide below should be perfectly serviceable for anyone using PulseAudio & PulseEffects-Legacy
+
 I've found Pop! OS' default dynamic range to be wayyyyy too large.  Even at ~15% volume dialogue vs. action sequences are like the difference between a whisper and a siren going off in your ears.  We can use PulseEffects to emulate Windows' "Loudness Equalization" feature across the whole system.
 
 ## Installation
