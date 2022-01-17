@@ -1,4 +1,4 @@
-# System-Wide Loudness Equalization on Pop! OS
+# (Deprecated) System-Wide Loudness Equalization on Pop! OS
 
 ???+ warning "Deprecated Guide"
      As of Jan 2022 I have started to experiment with Pipewire & EasyEffects.  The guide below should be perfectly serviceable for anyone using PulseAudio & PulseEffects-Legacy
