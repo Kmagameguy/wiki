@@ -6,6 +6,7 @@ edit_uri: "edit/main/docs"
 markdown_extensions:
   - admonition
   - pymdownx.details
+  - tables
 
 theme:
   name: material
