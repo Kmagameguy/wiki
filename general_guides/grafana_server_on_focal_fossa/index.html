@@ -13,7 +13,7 @@
     
     
       
-        <title>Controlling AMDGPU - KevBot's Wiki</title>
+        <title>Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS) - KevBot's Wiki</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controlling-amdgpu" class="md-skip">
+        <a href="#running-grafana-server-on-ubuntu-focal-fossa-2004-lts" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Controlling AMDGPU
+              Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)
             
           </span>
         </div>
@@ -324,14 +324,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -354,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/examining_disk_usage_linux/" class="md-nav__link">
+      <a href="../examining_disk_usage_linux/" class="md-nav__link">
         Examining Disk Usage on Linux Systems
       </a>
     </li>
@@ -368,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/getting_good_prints_from_an_ender3v2/" class="md-nav__link">
+      <a href="../getting_good_prints_from_an_ender3v2/" class="md-nav__link">
         Ultimaker Cura Print Settings for Stock Ender3 v2
       </a>
     </li>
@@ -380,11 +382,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../general_guides/grafana_server_on_focal_fossa/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-the-port" class="md-nav__link">
+    Change the Port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-the-service-file" class="md-nav__link">
+    Edit the Service File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-grafana-server" class="md-nav__link">
+    Restart Grafana Server
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -396,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/mqtt/" class="md-nav__link">
+      <a href="../mqtt/" class="md-nav__link">
         MQTT
       </a>
     </li>
@@ -410,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/restic_guide/" class="md-nav__link">
+      <a href="../restic_guide/" class="md-nav__link">
         Restic Backup
       </a>
     </li>
@@ -424,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/ripping_blurays/" class="md-nav__link">
+      <a href="../ripping_blurays/" class="md-nav__link">
         Ripping Blu-Rays
       </a>
     </li>
@@ -438,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/ripping_cds/" class="md-nav__link">
+      <a href="../ripping_cds/" class="md-nav__link">
         Ripping CDs
       </a>
     </li>
@@ -452,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/upgrading_postgres/" class="md-nav__link">
+      <a href="../upgrading_postgres/" class="md-nav__link">
         How to Upgrade a Postgres DB
       </a>
     </li>
@@ -466,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/using_docker_compose/" class="md-nav__link">
+      <a href="../using_docker_compose/" class="md-nav__link">
         How to Use Docker-Compose
       </a>
     </li>
@@ -480,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general_guides/verifying_file_hashes/" class="md-nav__link">
+      <a href="../verifying_file_hashes/" class="md-nav__link">
         Verifying File Hashes
       </a>
     </li>
@@ -500,16 +564,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -530,86 +592,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Controlling AMDGPU
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pop_os/controlling_amdgpu/" class="md-nav__link">
         Controlling AMDGPU
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reading-gpu-properties" class="md-nav__link">
-    Reading GPU Properties
-  </a>
-  
-    <nav class="md-nav" aria-label="Reading GPU Properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#device-properties-directory" class="md-nav__link">
-    Device Properties Directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-temperature-values" class="md-nav__link">
-    Reading Temperature Values
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-writing-fan-speed-values" class="md-nav__link">
-    Reading &amp; Writing Fan Speed Values
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -621,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logitech_g600_configuration/" class="md-nav__link">
+      <a href="../../pop_os/logitech_g600_configuration/" class="md-nav__link">
         Configuring a Logitech G600 Mouse
       </a>
     </li>
@@ -635,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../making_wifi_work/" class="md-nav__link">
+      <a href="../../pop_os/making_wifi_work/" class="md-nav__link">
         Making WiFi Work
       </a>
     </li>
@@ -649,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipewire/" class="md-nav__link">
+      <a href="../../pop_os/pipewire/" class="md-nav__link">
         Setting Up PipeWire with EasyEffects
       </a>
     </li>
@@ -663,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../snaps_with_symlinks/" class="md-nav__link">
+      <a href="../../pop_os/snaps_with_symlinks/" class="md-nav__link">
         Make Snaps Play Nicely With Home Directory Symlinks
       </a>
     </li>
@@ -677,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_firefox_profiles/" class="md-nav__link">
+      <a href="../../pop_os/working_with_firefox_profiles/" class="md-nav__link">
         Firefox Profiles
       </a>
     </li>
@@ -924,42 +911,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reading-gpu-properties" class="md-nav__link">
-    Reading GPU Properties
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
-  
-    <nav class="md-nav" aria-label="Reading GPU Properties">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#device-properties-directory" class="md-nav__link">
-    Device Properties Directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-temperature-values" class="md-nav__link">
-    Reading Temperature Values
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reading-writing-fan-speed-values" class="md-nav__link">
-    Reading &amp; Writing Fan Speed Values
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#change-the-port" class="md-nav__link">
+    Change the Port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-the-service-file" class="md-nav__link">
+    Edit the Service File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restart-grafana-server" class="md-nav__link">
+    Restart Grafana Server
   </a>
   
 </li>
@@ -976,74 +950,111 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/kmagameguy/wiki/edit/main/docs/pop_os/controlling_amdgpu.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/kmagameguy/wiki/edit/main/docs/general_guides/grafana_server_on_focal_fossa.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="controlling-amdgpu">Controlling AMDGPU</h1>
-<p>AMDGPU is the generic name for the AMD drivers for linux.  If you are using Pop! OS then the driver is already included in the distro's kernel. Nice.</p>
-<h2 id="reading-gpu-properties">Reading GPU Properties</h2>
-<p>Given the linux philosophy of "everything is a file", accessing GPU properties is trivial if you know where to look.  Some notable information is outlined below:</p>
-<h3 id="device-properties-directory">Device Properties Directory</h3>
-<p>Some of the enumerable values are system dependent, but they should (conceptually) be the same.  At time of writing here is where my device properties can be found:</p>
-<pre><code>$ ls /sys/class/drm/card0/device/hwmon/hwmon2/
+<h1 id="running-grafana-server-on-ubuntu-focal-fossa-2004-lts">Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)</h1>
+<p>While consolidating some of my homelab services onto a new server I had a bear of a time getting grafana-server to run on Ubuntu 20.04.  The first issue was that I couldn't seem to get the service to work on a different port from the default.  The second issue was that the service refused to start due to some systemd tomfoolery.  I'm writing these notes in hopes that they:  </p>
+<ol>
+<li>Help someone else</li>
+<li>Remind me what to try the next time I need to set up Grafana  </li>
+</ol>
+<h2 id="installation">Installation</h2>
+<p>Start by installing grafana through apt:  </p>
+<pre><code>sudo apt install grafana
+</code></pre>
+<p>At this point my installation was broken -- systemd couldn't start the service.  </p>
+<h2 id="change-the-port">Change the Port</h2>
+<p>To change the port I had to edit three files:  </p>
+<ol>
+<li>File 1: <code>/etc/grafana/grafana.ini</code></li>
+<li>File 2: <code>/usr/share/grafana/conf/defaults.ini</code></li>
+<li>File 3: <code>/usr/share/grafana/conf/sample.ini</code></li>
+</ol>
+<p>In each one:  </p>
+<ol>
+<li>Find the line that reads <code>;http_port = 3000</code></li>
+<li>Change it to <code>http_port = [NEW_PORT_NUMBER]</code><ul>
+<li><em>Note the removal of the semi-colon, which uncomments the line</em></li>
+</ul>
+</li>
+</ol>
+<h2 id="edit-the-service-file">Edit the Service File</h2>
+<p>For whatever reason the default service file doesn't seem to play nice with systemd on 20.04.  I had to comment out a ton of lines.  Here's the service file in full so it's easy to copy &amp; paste:  </p>
+<pre><code>[Unit]
+Description=Grafana instance
+Documentation=http://docs.grafana.org
+Wants=network-online.target
+After=network-online.target
+After=postgresql.service mariadb.service mysql.service
 
-[..]
-temp1_crit             temp1_label           temp2_input       temp3_emergency
-temp1_crit_hyst        temp2_crit            temp2_label       temp3_input
-temp_1_emergency       temp2_crit_hyst       temp3_crit        temp3_label
-temp1_input            temp2_emergency       temp3_crit_hyst
-[...]
-</code></pre>
-<p>You can <code>cat</code>  the temp*_label files to see what each sensor is responsible for.  E.g.:
-- temp1 = edge temperature
-- temp2 = junction temperature
-- temp3 = mem temperature</p>
-<h3 id="reading-temperature-values">Reading Temperature Values</h3>
-<p>No one wants their system to overheat, so you may occasionally want to spot check the GPU's temperature sensors, specifically the edge value.  You can do that like so:</p>
-<pre><code>$ cat /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input
+[Service]
+EnvironmentFile=/etc/default/grafana-server
+User=grafana
+Group=grafana
+Type=simple
+Restart=on-failure
+WorkingDirectory=/usr/share/grafana
+RuntimeDirectory=grafana
+RuntimeDirectoryMode=0750
+ExecStart=/usr/sbin/grafana-server                                                  \
+                            --config=${CONF_FILE}                                   \
+                            --pidfile=${PID_FILE_DIR}/grafana-server.pid            \
+                            --packaging=deb                                         \
+                            cfg:default.paths.logs=${LOG_DIR}                       \
+                            cfg:default.paths.data=${DATA_DIR}                      \
+                            cfg:default.paths.plugins=${PLUGINS_DIR}                \
+                            cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}  
 
-52000 
-</code></pre>
-<p>Where <code>52000</code> = 52 centigrade with three zeroes attached.</p>
-<h3 id="reading-writing-fan-speed-values">Reading &amp; Writing Fan Speed Values</h3>
-<p><strong>Reading Values</strong><br />
-By default the fan speeds are operated in "automatic" mode by the system.  You can check the current fan speed like so:</p>
-<pre><code>$ cat /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
 
-73
+LimitNOFILE=10000
+TimeoutStopSec=20
+#CapabilityBoundingSet=
+#DeviceAllow=
+#LockPersonality=true
+#MemoryDenyWriteExecute=false
+#NoNewPrivileges=true
+#PrivateDevices=true
+#PrivateTmp=true
+#ProtectClock=true
+#ProtectControlGroups=true
+#ProtectHome=true
+#ProtectHostname=true
+#ProtectKernelLogs=true
+#ProtectKernelModules=true
+#ProtectKernelTunables=true
+#ProtectProc=invisible
+#ProtectSystem=full
+#RemoveIPC=true
+#RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+#RestrictNamespaces=true
+#RestrictRealtime=true
+#RestrictSUIDSGID=true
+#SystemCallArchitectures=native
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
 </code></pre>
-<p>Where 73 = a fan speed of 28% (values are reported in PWM cycles, of which 255 is the maximum value.  A factor of 2.55 is used to convert back and forth.  E.g. multiply desired fan speed % by 2.55 to get the PWM value; or divide the PWM value by 2.55 to get the fan speed %).</p>
-<p><strong>Writing Fan Speed Values</strong><br />
-You can take manual control of the fan speed if you know the GPU will be under stress or don't trust the built-in automatic management engine.  Do so like this:</p>
-<p>First, assume manual control:</p>
-<pre><code>$ echo &quot;1&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+<h2 id="restart-grafana-server">Restart Grafana Server</h2>
+<p>With everything reset you should be able to start up the Grafana service.  I had to run these commands to clear everything up:  </p>
+<pre><code>$ sudo systemctl stop grafana-server.service
+$ sudo systemctl reset-failed grafana-server.service
+$ sudo systemctl start grafana-server.service
 </code></pre>
-<p>Once set to manual mode you can push values to the fan speed controller.  First make sure you convert your desired fan speed % into a PWM value.</p>
-<p>For example, 50% * 2.55 = ﻿128 (rounded to nearest whole number).  Set it like so:</p>
-<pre><code>$ echo &quot;128&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+<p>You can check whether the server is working by opening the server URL:PORT in a browser, or by checking it through systemd: <code>systemctl status grafana-server.service</code>.  </p>
+<p>If everything looks good the last thing to do is make Grafana run at startup:  </p>
+<pre><code>sudo systemctl enable grafana-server.service
 </code></pre>
-<p><strong>Resetting Fan Speed Management</strong><br />
-You may also resume automatic fan speed management. Do this like so:</p>
-<pre><code>$ echo &quot;2&quot; &gt; /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
-</code></pre>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>You may need to restart the AMDGPU service to see the automatic management kick back up.  A reboot will work if you're not sure how to restart the service.</p>
-</details>
-<h2 id="references">References</h2>
-<p>The great Arch Wiki entry for the Fan Speed Control contains a section dedicated to the AMDGPU driver:</p>
-<p><a href="https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control">https://wiki.archlinux.org/title/fanspeedcontrol_#AMDGPU_sysfs_fan_control</a></p>
-<p>The <code>Issues</code> page for the AMDGPU driver can be useful if something seems broken.  Kernel updates are notorious for breaking the AMDGPU driver features; upgrade with caution:</p>
-<p><a href="https://gitlab.freedesktop.org/drm/amd/-/issues">https://gitlab.freedesktop.org/drm/amd/-/issues</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2021-10-07
+      2022-04-15
     
   </small>
 </div>
@@ -1060,7 +1071,7 @@ You may also resume automatic fan speed management. Do this like so:</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../general_guides/verifying_file_hashes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Verifying File Hashes" rel="prev">
+        <a href="../getting_good_prints_from_an_ender3v2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ultimaker Cura Print Settings for Stock Ender3 v2" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1069,20 +1080,20 @@ You may also resume automatic fan speed management. Do this like so:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Verifying File Hashes
+              Ultimaker Cura Print Settings for Stock Ender3 v2
             </div>
           </div>
         </a>
       
       
         
-        <a href="../logitech_g600_configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuring a Logitech G600 Mouse" rel="next">
+        <a href="../mqtt/" class="md-footer__link md-footer__link--next" aria-label="Next: MQTT" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configuring a Logitech G600 Mouse
+              MQTT
             </div>
           </div>
           <div class="md-footer__button md-icon">
