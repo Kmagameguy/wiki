@@ -13,7 +13,7 @@
     
     
       
-        <title>Verifying File Hashes - KevBot's Wiki</title>
+        <title>Ripping Multi-Media Disks - KevBot's Wiki</title>
       
     
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#verifying-file-hashes" class="md-skip">
+        <a href="#ripping-multi-media-disks" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Verifying File Hashes
+              Ripping Multi-Media Disks
             
           </span>
         </div>
@@ -453,11 +453,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ripping_multimedia_disks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ripping Multi-Media Disks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Ripping Multi-Media Disks
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-ddrescue" class="md-nav__link">
+    Installing DDRESCUE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-your-disk-drive" class="md-nav__link">
+    Finding Your Disk Drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ddrescue" class="md-nav__link">
+    Using DDRESCUE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-disk" class="md-nav__link">
+    Verifying the Disk
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -495,59 +557,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Verifying File Hashes
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../verifying_file_hashes/" class="md-nav__link">
         Verifying File Hashes
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -926,15 +940,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#installing-ddrescue" class="md-nav__link">
+    Installing DDRESCUE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#finding-your-disk-drive" class="md-nav__link">
+    Finding Your Disk Drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ddrescue" class="md-nav__link">
+    Using DDRESCUE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-disk" class="md-nav__link">
+    Verifying the Disk
   </a>
   
 </li>
@@ -951,36 +979,51 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/kmagameguy/wiki/edit/main/docs/general_guides/verifying_file_hashes.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/kmagameguy/wiki/edit/main/docs/general_guides/ripping_multimedia_disks.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="verifying-file-hashes">Verifying File Hashes</h1>
-<p>File hashes are unique, reproducible string sequences that identify the integrity another file.  They are usually provided alongside download links so that a user can compare their downloaded file's hash with the source hash.  This safeguards against supply chain attacks and data corruption that can occur during a download.</p>
-<h2 id="linux">Linux</h2>
-<p>Use the built-in <code>md5sum</code> or <code>sha256sum</code> commands:</p>
-<pre><code>$ md5sum /path/to/file
-
-OR
-
-$ sha256sum /path/to/file
+<h1 id="ripping-multi-media-disks">Ripping Multi-Media Disks</h1>
+<p>Ripping multimedia to the ISO format is a great way to back up disk media.  If you're not following the blu-ray/CD guides, perhaps you need to back up some old family photos, a linux disk image, or something of that sort.  </p>
+<p>Typically this task is straightforward enough with the <code>dd</code> command, but <code>ddrescue</code> is a slightly better option, offering these advanced features:</p>
+<ul>
+<li>Disk error detection/correction (success may vary)</li>
+<li>Progress bar</li>
+<li>a simpler/safer commandline syntax (it's much harder to destroy a live disk with <code>ddrescue</code> than with <code>dd</code>)  </li>
+</ul>
+<h2 id="installing-ddrescue">Installing DDRESCUE</h2>
+<p>Open a commandline and enter:</p>
+<pre><code>$ sudo apt install gddrescue -y
 </code></pre>
-<h2 id="windows">Windows</h2>
-<p>Use the built-in <code>CertUtil</code> command:</p>
-<pre><code>Path:\To\File&gt; CertUtil -hashfile &lt;filename&gt; &lt;hashtype&gt;
+<h2 id="finding-your-disk-drive">Finding Your Disk Drive</h2>
+<p>Insert your disk into your drive.  Unless you have multiple drives, yours will typically be in <code>/dev/sr0</code>.  You may also be able to use <code>/dev/cdrom</code> which will be symlinked to your device on certain GNU/Linux distributions.</p>
+<h2 id="using-ddrescue">Using DDRESCUE</h2>
+<p>With the disk in the drive we're ready to start.  The backup is invoked with one command:</p>
+<pre><code>$ ddrescue [/path/to/disk/drive] [/where/to/save/file.iso]
 </code></pre>
+<p>Where <code>[/path/to/disk/drive]</code> is the disk device you identified in the section above.</p>
+<p>Where <code>[/where/to/save/file.iso]</code> is the location to store the ISO backup.</p>
 <p>Example:</p>
-<pre><code>CertUtil -hashfile pop_os.iso sha256
+<pre><code>$ ddrescue /dev/sr0 /mnt/backups/my_disk_backup.iso
 </code></pre>
+<h2 id="verifying-the-disk">Verifying the Disk</h2>
+<p>Use <code>md5sum</code> against your original disk &amp; the ISO to verify their integrity.  For example:</p>
+<pre><code>$ md5sum /dev/sr0
+57cyj4119nma268eb5776ccf51yi3197
+
+$ md5sum /path/to/iso/file.iso
+57cyj4119nma268eb5776ccf51yi3197
+</code></pre>
+<p>If the md5sum values match then your ISO is a perfect copy of your original disk!</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2021-10-03
+      2022-06-07
     
   </small>
 </div>
@@ -997,7 +1040,7 @@ $ sha256sum /path/to/file
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../using_docker_compose/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to Use Docker-Compose" rel="prev">
+        <a href="../ripping_cds/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ripping CDs" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1006,20 +1049,20 @@ $ sha256sum /path/to/file
               <span class="md-footer__direction">
                 Previous
               </span>
-              How to Use Docker-Compose
+              Ripping CDs
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../pop_os/controlling_amdgpu/" class="md-footer__link md-footer__link--next" aria-label="Next: Controlling AMDGPU" rel="next">
+        <a href="../upgrading_postgres/" class="md-footer__link md-footer__link--next" aria-label="Next: How to Upgrade a Postgres DB" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Controlling AMDGPU
+              How to Upgrade a Postgres DB
             </div>
           </div>
           <div class="md-footer__button md-icon">
