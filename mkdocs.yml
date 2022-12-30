@@ -1,0 +1,38 @@
+site_name: KevBot's Wiki
+repo_url: "https://github.com/kmagameguy/wiki"
+repo_name: "kmagameguy/wiki"
+edit_uri: "edit/main/docs"
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - tables
+
+theme:
+  name: material
+  palette:
+    primary: teal
+  font:
+    text: Open Sans
+  icon:
+    repo: fontawesome/brands/github-alt
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - search.share
+  extra:
+    social:
+      - icon: fontawesome/solid/globe-americas
+        link: https://kmagameguy.com
+      - icon: fontawesome/brands/github
+        link: https://github.com/kmagameguy
+      - icon: fontawesome/brands/linkedin
+        link: https://www.linkedin.com/kmagameguy
+
+plugins:
+  - search
+  - git-revision-date
+copyright: 2021 &copy; Kmagameguy - Licensed under GPLv3
