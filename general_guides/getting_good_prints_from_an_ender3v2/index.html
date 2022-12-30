@@ -1,0 +1,1290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../examining_disk_usage_linux/">
+      
+      
+        <link rel="next" href="../grafana_server_on_focal_fossa/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>Ultimaker Cura Print Settings for Stock Ender3 v2 - KevBot's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ultimaker-cura-print-settings-for-stock-ender3-v2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KevBot&#39;s Wiki" class="md-header__button md-logo" aria-label="KevBot's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KevBot's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ultimaker Cura Print Settings for Stock Ender3 v2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kmagameguy/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kmagameguy/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KevBot&#39;s Wiki" class="md-nav__button md-logo" aria-label="KevBot's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    KevBot's Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kmagameguy/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kmagameguy/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        KevBot's Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android/android_apps_without_smartphone/" class="md-nav__link">
+        Run Android Apps Without a Smartphone
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Gallium os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gallium os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Gallium os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallium_os/fixing_the_audio_system/" class="md-nav__link">
+        Fixing the Gallium OS Audio System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="true">
+          General guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          General guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examining_disk_usage_linux/" class="md-nav__link">
+        Examining Disk Usage on Linux Systems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ultimaker Cura Print Settings for Stock Ender3 v2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ultimaker Cura Print Settings for Stock Ender3 v2
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tightening-the-frame" class="md-nav__link">
+    Tightening the Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bed-leveling" class="md-nav__link">
+    Bed Leveling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-software" class="md-nav__link">
+    Choosing the Right Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-settings" class="md-nav__link">
+    Print Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up-and-maintenance" class="md-nav__link">
+    Clean-Up and Maintenance
+  </a>
+  
+    <nav class="md-nav" aria-label="Clean-Up and Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#after-every-print" class="md-nav__link">
+    After Every Print
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-every-third-or-fourth-print" class="md-nav__link">
+    After Every Third or Fourth Print
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grafana_server_on_focal_fossa/" class="md-nav__link">
+        Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mqtt/" class="md-nav__link">
+        MQTT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native_firefox_installation_on_linux/" class="md-nav__link">
+        How to Install Firefox Directly from Mozilla Builds on Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restic_guide/" class="md-nav__link">
+        Restic Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upgrading_postgres/" class="md-nav__link">
+        How to Upgrade a Postgres DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using_docker_compose/" class="md-nav__link">
+        How to Use Docker-Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verifying_file_hashes/" class="md-nav__link">
+        Verifying File Hashes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Pop os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pop os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Pop os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/controlling_amdgpu/" class="md-nav__link">
+        Controlling AMDGPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/hp_printer_and_scanner_software/" class="md-nav__link">
+        How To Install HP Printer/Scanner Drivers & Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/logitech_g600_configuration/" class="md-nav__link">
+        Configuring a Logitech G600 Mouse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/making_wifi_work/" class="md-nav__link">
+        Making WiFi Work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/pipewire/" class="md-nav__link">
+        Setting Up PipeWire with EasyEffects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/snaps_with_symlinks/" class="md-nav__link">
+        Make Snaps Play Nicely With Home Directory Symlinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/working_with_firefox_profiles/" class="md-nav__link">
+        Firefox Profiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Raspbian os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raspbian os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Raspbian os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspbian_os/headless_setup/" class="md-nav__link">
+        Headless Raspberry Pi from Scratch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspbian_os/latest_apache2_on_raspbian/" class="md-nav__link">
+        Install Latest Apache2 On Raspbian
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Recipes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recipes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Recipes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/hershey_kiss_peanut_butter_cookies/" class="md-nav__link">
+        Hershey's Kiss Peanut Butter Cookies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/jennifer_aniston_salad/" class="md-nav__link">
+        The Jennifer Aniston Salad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/mango_cinnamon_habanero_hot_sauce/" class="md-nav__link">
+        Mango-Cinnamon-Habanero Hot Sauce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/mediterranean_chopped_salad/" class="md-nav__link">
+        Mediterranean Chopped Salad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/roasted_pumpkin_seeds/" class="md-nav__link">
+        Roasting Pumpkin Seeds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/spicy_pickles/" class="md-nav__link">
+        Spicy Pickles for Chilliheads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/turkey_meatballs/" class="md-nav__link">
+        Turkey Meatballs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          Zzz legacy guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Zzz legacy guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Zzz legacy guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zzz_legacy_guides/" class="md-nav__link">
+        Deprecated & Legacy Guides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zzz_legacy_guides/fixing_the_audio_system/" class="md-nav__link">
+        (Deprecated) System-Wide Loudness Equalization on Pop! OS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tightening-the-frame" class="md-nav__link">
+    Tightening the Frame
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bed-leveling" class="md-nav__link">
+    Bed Leveling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-software" class="md-nav__link">
+    Choosing the Right Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-settings" class="md-nav__link">
+    Print Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up-and-maintenance" class="md-nav__link">
+    Clean-Up and Maintenance
+  </a>
+  
+    <nav class="md-nav" aria-label="Clean-Up and Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#after-every-print" class="md-nav__link">
+    After Every Print
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-every-third-or-fourth-print" class="md-nav__link">
+    After Every Third or Fourth Print
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="ultimaker-cura-print-settings-for-stock-ender3-v2">Ultimaker Cura Print Settings for Stock Ender3 v2</h1>
+<p>Not long ago I purchased a new Creality Ender3v2 3d printer on sale for about $150.00 USD.  It took quite a bit of trial and error to start getting reasonable prints on the stock unit so here are some notes from my experiments.  </p>
+<h2 id="tightening-the-frame">Tightening the Frame</h2>
+<p>One of the first things to check is whether the frame is snugged up together.  Specifically, the X-axis arm which can droop easily if the ends aren't tightened up.  You'll know if you got the tension right if (gentle) upward lift on the end opposite the stepper motor produces very little movement before meeting strong resistance.  Remember that tolerances in 3d printing are measured in millimeters so small variances can produce large effects.  </p>
+<h2 id="bed-leveling">Bed Leveling</h2>
+<p>People seem to make this out to be more difficult than it really is.  You don't need any fancy tools, and this is actually one of the few calibrations that works if the leveling is "good enough".  </p>
+<div class="admonition tip">
+<p class="admonition-title">Bed Quality</p>
+<p>Out of the box, many 3D printers have beds that are not the best quality.  While Creality has done a lot to improve the glass bed that ships with the Ender3v2, I still ended up with a warped bed.  In my case, the center of the bed bows upwards ever-so-slightly, which means I tend to position all my prints on a Y-axis offset to avoid this raised area as much as possible.  If you have a similar issue you may need to employ a similar strategy.</p>
+</div>
+<ol>
+<li>Turn ON your 3D printer and set it to auto-home</li>
+<li>Set the printer to preheat ~10 degrees hotter than your normal printing temperature (e.g. if you are printing PLA at 180c, preheat to 190c)</li>
+<li>Use the menus to disable the stepper motor</li>
+<li>Gently position the extruder nozzle above the center point of one of the bed's tension knobs</li>
+<li>Raise the bed using the knob and just visually watch until there is about a 1/8" gap between the nozzle and the bed</li>
+<li>Repeat for each corner of the bed, moving in a clockwise (or counter-clockwise) motion</li>
+<li>Grab a piece of paper</li>
+<li>Once again, position the extruder nozzle above the center point of one of the bed's tension knobs</li>
+<li>Insert the paper between the nozzle and the bed</li>
+<li>Gently adjust the bed position upwards until you feel the faintest rubbing from the nozzle</li>
+<li>Repeat the previous two steps for each corner, but this time move diagonally opposite (so if you start at front-left, move to back-right, then back-left to front-right)</li>
+<li>While doing this you may start to move the print head and notice the nozzle is hitting the bed -- when this happens STOP and lower the bed a little bit, using the knobs that the print head is positioned between (e.g. if the print head hits the back of the board, between the back-left and back-right knobs, lower the bed using both of those knobs)</li>
+<li>Repeat the paper test in caddy-corner fashion until you are feeling just a little rubbing in each corner</li>
+<li>When all seems good, run the print head over the middle of the board front-to-back and side-to-side.  If you collide with the bed somewhere in the middle of the board use all four knobs to slowly lower the board an equal amount all around</li>
+</ol>
+<p>After 2-3 passes you should be "good enough".  Given enough time you will probably be able to visually do bed leveling.  Like I said above it doesn't need to be perfect -- feeling a little resistance, or positioning the bed a hair lower than the resistance point will be good enough.  </p>
+<p>Calibrate once every couple prints, especially if you apply pressure to the bed when trying to unstick finished prints from it.  </p>
+<h2 id="choosing-the-right-software">Choosing the Right Software</h2>
+<p>I use Ultimaker Cura for all of my prints.  It doesn't have a profile for the Ender3v2 though we can borrow many of the defaults from the original Ender3 profile:  </p>
+<ol>
+<li>Open Cura</li>
+<li>Open Preferences &gt; Configure Cura...</li>
+<li>Open Printers</li>
+<li>Choose "+ Add"</li>
+<li>Choose Add a non-networked printer</li>
+<li>Expand Creality3D, Select Creality Ender-3, and change the name to Creality Ender-3 V2</li>
+<li>
+<p>Match the "Machine Settings" to the tables below:  </p>
+<table>
+<thead>
+<tr>
+<th align="right">Printer Settings</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">X (Width)</td>
+<td align="left">220.0 mm</td>
+</tr>
+<tr>
+<td align="right">Y (Depth)</td>
+<td align="left">220.0 mm</td>
+</tr>
+<tr>
+<td align="right">Z (Height)</td>
+<td align="left">250.0 mm</td>
+</tr>
+<tr>
+<td align="right">Build plate shape</td>
+<td align="left">Rectangular</td>
+</tr>
+<tr>
+<td align="right">Origin at center</td>
+<td align="left">OFF</td>
+</tr>
+<tr>
+<td align="right">Heated bed</td>
+<td align="left">ON</td>
+</tr>
+<tr>
+<td align="right">Heated build volume</td>
+<td align="left">OFF</td>
+</tr>
+<tr>
+<td align="right">G-code flavor</td>
+<td align="left">Marlin</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="right">Printhead Settings</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">X min</td>
+<td align="left">-26 mm</td>
+</tr>
+<tr>
+<td align="right">Y min</td>
+<td align="left">-32 mm</td>
+</tr>
+<tr>
+<td align="right">X max</td>
+<td align="left">32 mm</td>
+</tr>
+<tr>
+<td align="right">Y max</td>
+<td align="left">34 mm</td>
+</tr>
+<tr>
+<td align="right">Gantry Height</td>
+<td align="left">25.0 mm</td>
+</tr>
+<tr>
+<td align="right">Number of extruders</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="right">Apply Extruder Offsets to GCode</td>
+<td align="left">ON</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Press CLOSE to save the changes  </p>
+</li>
+</ol>
+<h2 id="print-settings">Print Settings</h2>
+<p>Once the printer is set up we'll want to dial in the print settings.  Some of this will depend on the filament you use, so here we'll be assuming PLA:  </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These are simply the settings that work best for me, so they may or may not need tweaking if you decide to use them.  Print quality can be affected by anything from ambient temperature to humidity levels.  Generally speaking though, I've found these tweaks tend to produce more reliable prints than the stock settings.</p>
+</div>
+<ol>
+<li>Printing Temperature: 195.0c</li>
+<li>Printing Temperature Initial Layer: 200.0c</li>
+<li>Build Plate Temperature: 65c</li>
+<li>Print Speed: 40-45mm/s</li>
+<li>Build Plate Adhesion Type: Raft for small prints, Brim for large prints  </li>
+</ol>
+<h2 id="clean-up-and-maintenance">Clean-Up and Maintenance</h2>
+<p>Like any other physical maker-material clean-up is just as important as the print itself.  I recommend the following routines:  </p>
+<h3 id="after-every-print">After Every Print</h3>
+<ol>
+<li>Clear any debris from the bed, wipe down with a cloth</li>
+<li>Examine the extruder nozzle for any signs of filament leakage, clean up any you might see with something heat-insulated (I have a very nice pair of needlepiont Tweezerman tweezers that do a great job of this)</li>
+</ol>
+<h3 id="after-every-third-or-fourth-print">After Every Third or Fourth Print</h3>
+<ol>
+<li>Clean the bed with Isopropyl Alcohol</li>
+<li>Auto-Home the nozzle and visually inspect the bed leveling</li>
+</ol>
+<p>Any other issues will be clearly noticeable during printing.  Oozing can be common, which may require replacement nozzles or just a cleaning of the heater block which can be done by removing the rubber sock covering it.  </p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-12-30
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 &copy; Kmagameguy - Licensed under GPLv3
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

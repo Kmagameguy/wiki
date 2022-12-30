@@ -1,0 +1,1609 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../gallium_os/fixing_the_audio_system/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
+    
+    
+      
+        <title>Run Android Apps Without a Smartphone - KevBot's Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#run-android-apps-without-a-smartphone" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KevBot&#39;s Wiki" class="md-header__button md-logo" aria-label="KevBot's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KevBot's Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Run Android Apps Without a Smartphone
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kmagameguy/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kmagameguy/wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KevBot&#39;s Wiki" class="md-nav__button md-logo" aria-label="KevBot's Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    KevBot's Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kmagameguy/wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kmagameguy/wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        KevBot's Wiki
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Run Android Apps Without a Smartphone
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Run Android Apps Without a Smartphone
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-would-you-do-this" class="md-nav__link">
+    Why Would You Do This?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-we-begin" class="md-nav__link">
+    Before We Begin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-things" class="md-nav__link">
+    Downloading Things
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading Things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualbox" class="md-nav__link">
+    VirtualBox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-virtualbox" class="md-nav__link">
+    Installing VirtualBox
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing VirtualBox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-base-program" class="md-nav__link">
+    Installing the Base Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-empty-virtual-machine" class="md-nav__link">
+    Creating an Empty Virtual Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-virtual-machine-startup-options" class="md-nav__link">
+    Configuring the Virtual Machine Startup Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-android" class="md-nav__link">
+    Installing Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-the-android-iso" class="md-nav__link">
+    Loading the Android ISO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-disk-partitions-installing-android" class="md-nav__link">
+    Creating Disk Partitions &amp; Installing Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecting-the-installation-media" class="md-nav__link">
+    Ejecting the Installation Media
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booting-android-for-the-first-time" class="md-nav__link">
+    Booting Android for the First Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-system" class="md-nav__link">
+    Updating the System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taking-a-snapshot" class="md-nav__link">
+    Taking a Snapshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-an-app" class="md-nav__link">
+    Installing an App
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Gallium os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gallium os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Gallium os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallium_os/fixing_the_audio_system/" class="md-nav__link">
+        Fixing the Gallium OS Audio System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          General guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          General guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/examining_disk_usage_linux/" class="md-nav__link">
+        Examining Disk Usage on Linux Systems
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/getting_good_prints_from_an_ender3v2/" class="md-nav__link">
+        Ultimaker Cura Print Settings for Stock Ender3 v2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/grafana_server_on_focal_fossa/" class="md-nav__link">
+        Running Grafana Server on Ubuntu Focal Fossa (20.04 LTS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/mqtt/" class="md-nav__link">
+        MQTT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/native_firefox_installation_on_linux/" class="md-nav__link">
+        How to Install Firefox Directly from Mozilla Builds on Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/restic_guide/" class="md-nav__link">
+        Restic Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/upgrading_postgres/" class="md-nav__link">
+        How to Upgrade a Postgres DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/using_docker_compose/" class="md-nav__link">
+        How to Use Docker-Compose
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_guides/verifying_file_hashes/" class="md-nav__link">
+        Verifying File Hashes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Pop os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pop os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Pop os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/controlling_amdgpu/" class="md-nav__link">
+        Controlling AMDGPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/hp_printer_and_scanner_software/" class="md-nav__link">
+        How To Install HP Printer/Scanner Drivers & Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/logitech_g600_configuration/" class="md-nav__link">
+        Configuring a Logitech G600 Mouse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/making_wifi_work/" class="md-nav__link">
+        Making WiFi Work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/pipewire/" class="md-nav__link">
+        Setting Up PipeWire with EasyEffects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/snaps_with_symlinks/" class="md-nav__link">
+        Make Snaps Play Nicely With Home Directory Symlinks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pop_os/working_with_firefox_profiles/" class="md-nav__link">
+        Firefox Profiles
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Raspbian os
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Raspbian os" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Raspbian os
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspbian_os/headless_setup/" class="md-nav__link">
+        Headless Raspberry Pi from Scratch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../raspbian_os/latest_apache2_on_raspbian/" class="md-nav__link">
+        Install Latest Apache2 On Raspbian
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Recipes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recipes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Recipes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/hershey_kiss_peanut_butter_cookies/" class="md-nav__link">
+        Hershey's Kiss Peanut Butter Cookies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/jennifer_aniston_salad/" class="md-nav__link">
+        The Jennifer Aniston Salad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/mango_cinnamon_habanero_hot_sauce/" class="md-nav__link">
+        Mango-Cinnamon-Habanero Hot Sauce
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/mediterranean_chopped_salad/" class="md-nav__link">
+        Mediterranean Chopped Salad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/roasted_pumpkin_seeds/" class="md-nav__link">
+        Roasting Pumpkin Seeds
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/spicy_pickles/" class="md-nav__link">
+        Spicy Pickles for Chilliheads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/turkey_meatballs/" class="md-nav__link">
+        Turkey Meatballs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" tabindex="0" aria-expanded="false">
+          Zzz legacy guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Zzz legacy guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Zzz legacy guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zzz_legacy_guides/" class="md-nav__link">
+        Deprecated & Legacy Guides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zzz_legacy_guides/fixing_the_audio_system/" class="md-nav__link">
+        (Deprecated) System-Wide Loudness Equalization on Pop! OS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-would-you-do-this" class="md-nav__link">
+    Why Would You Do This?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-we-begin" class="md-nav__link">
+    Before We Begin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloading-things" class="md-nav__link">
+    Downloading Things
+  </a>
+  
+    <nav class="md-nav" aria-label="Downloading Things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualbox" class="md-nav__link">
+    VirtualBox
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-virtualbox" class="md-nav__link">
+    Installing VirtualBox
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing VirtualBox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-base-program" class="md-nav__link">
+    Installing the Base Program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-an-empty-virtual-machine" class="md-nav__link">
+    Creating an Empty Virtual Machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-virtual-machine-startup-options" class="md-nav__link">
+    Configuring the Virtual Machine Startup Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-android" class="md-nav__link">
+    Installing Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading-the-android-iso" class="md-nav__link">
+    Loading the Android ISO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-disk-partitions-installing-android" class="md-nav__link">
+    Creating Disk Partitions &amp; Installing Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecting-the-installation-media" class="md-nav__link">
+    Ejecting the Installation Media
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booting-android-for-the-first-time" class="md-nav__link">
+    Booting Android for the First Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-system" class="md-nav__link">
+    Updating the System
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taking-a-snapshot" class="md-nav__link">
+    Taking a Snapshot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-an-app" class="md-nav__link">
+    Installing an App
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="run-android-apps-without-a-smartphone">Run Android Apps Without a Smartphone</h1>
+<h2 id="why-would-you-do-this">Why Would You Do This?</h2>
+<p>Frustratingly, access to more and more services are locked behind smartphone apps.
+For some apps (ridesharing comes to mind) this makes a lot of sense.  However for others,
+(e.g. Amazon Care) this makes a lot less sense.  For me this is a worrying trend as it means:</p>
+<ol>
+<li>Only those privileged with the ability to afford smartphones can access these services.
+This fast becomes a discriminatory practice and is fundamentally anti-consumer</li>
+<li>It affords the vendor more ability to abuse private info.  By restricting access
+to mobile apps, vendors are given easier access to mobile phone data that can then be
+slurped out of the device and sold off to advertisers, yuck</li>
+<li>For the privacy-conscious it makes separating employer concerns from personal ones difficult</li>
+</ol>
+<p>Number 3 is what prompted me to write this guide.  My employer is increasingly
+requiring users to access services which only provide mobile app access.  My phone isn't
+compatible with some of these programs, and, I also think it's an invasion of my personal
+privacy/rights for an employer to expect access to my personal device(s).  </p>
+<p>Enter <a href="https://www.android-x86.org/">android-x86</a> and <a href="https://www.virtualbox.org/">VirtualBox</a>.  No matter what your platform
+of choice is (Linux, Windows, macOS), you will be able to use this guide to run an
+emulated copy of the Android operating system.  This means you will be able to
+install and run Android apps right on your desktop/laptop computer.</p>
+<details class="note" open="open">
+<summary>This seems complicated...</summary>
+<p><em>Yes, this is far from the most efficient way to run Android. <a href="https://www.bluestacks.com/">BlueStacks</a> is
+ a more user friendly way to run an Android emulator.  Unfortunately I couldn't get
+ BlueStacks 4 working on macOS Monterey, but it's just using VirtualBox under the hood anyway.
+ So, I'm taking the DIY approach here since it offers more control</em></p>
+</details>
+<h2 id="overview">Overview</h2>
+<p>If you're with me so far, here's what we're gonna cover:</p>
+<ol>
+<li>What to download &amp; why</li>
+<li>How to configure VirtualBox</li>
+<li>How to install Android in VirtualBox</li>
+<li>Android first-time setup</li>
+<li>Installing an app</li>
+</ol>
+<p>I will try to keep this guide as platform-agnostic as possible, but if I'm being honest I ran through
+these steps on macOS and I don't have a Windows box around for testing purposes.  As a result some of
+the steps may be mac-biased but hopefully they're intuitive enough that you'll be able to figure things
+out on your own platform of choice!</p>
+<h2 id="before-we-begin">Before We Begin</h2>
+<p>Before we get started, make sure your system has enough resources to support this project:</p>
+<ul>
+<li>Memory: At least 4GB</li>
+<li>Disk space: At least 12GB</li>
+<li>An internet connection</li>
+</ul>
+<h2 id="downloading-things">Downloading Things</h2>
+<p>The two things we need to get started are VirtualBox &amp; an Android installer.  VirtualBox is a "Virtual Machine"
+manager.  A virtual machine is like putting a computer in a box.  Your computer (the "host") runs VirtualBox,
+which then runs the second system (the "guest", in our case, the Android system) on top.  The "guest" is displayed
+in a Window just like any other program on your computer.  Very cool.</p>
+<h3 id="virtualbox">VirtualBox</h3>
+<p>Start by downloading <a href="https://www.virtualbox.org/">VirtualBox</a> from its homepage.  There should be a big download button you can click
+once you've followed that link.  The next page is text-heavy and might be disorienting at first.  Just find the
+"VirtualBox Binaries" section (it should be first on the page), then look for a header that looks like
+"VirtualBox x.x.xx platform packages".  At time of writing the header reads "VirtualBox 6.1.30 platform packages".  </p>
+<p>Under that heading should be a bulleted list of links.  Find the one that matches your system:</p>
+<ul>
+<li>Windows hosts = Click this if you are on a Windows computer</li>
+<li>OS X hosts = Click this if you are on a Mac computer</li>
+<li>Linux distributions = Click this if you are on a Linux computer (we assume you know what you're doing)</li>
+</ul>
+<p>Clicking the Windows or Mac links will begin the download!  Next we'll grab Android.</p>
+<h3 id="android">Android</h3>
+<p>The Android package is referred to as an "image" file and contains a pre-configured set of tools that
+automatically (well, mostly!) set up a brand new copy of the Android operating system.  If you've ever
+inserted a CD into your computer and installed a program from it, this process is effectively very similar!  </p>
+<p>We'll download the Android image from the <a href="https://www.android-x86.org/">Android-x86</a> project. On the homepage should be a big
+"Download" button.  Click that and you'll be taken to a new page which links to a couple different storage
+locations (at time of writing, FOSSHUB and OSDN).  I followed the link to FOSSHUB but it doesn't really matter
+which one you pick -- they have the same files and are just a way for the project to make sure their servers
+distribute traffic to avoid being overloaded.  </p>
+<p>Both mirror sites have a list of different files so we need to pick the correct one.  Look for ones that are
+labeled as an "ISO" file (.iso).  These are offered in two flavors: 32-bit &amp; 64-bit.  Both will work fine but I
+prefer the 64-bit version.  So, putting those together, here's what you should look for:</p>
+<p>FOSSHUB:</p>
+<ul>
+<li>Download the file labeled "Android-x86 64-bit ISO file" by clicking its link</li>
+</ul>
+<p>OSDN:</p>
+<ul>
+<li>Download the file that looks like this: "android-x86_64-8.1-r6.iso".<ul>
+<li>The "-8.1-r6" part of the filename will change over time.  That simply identifies the file version, so yours may look newer than what's written here</li>
+<li>Notice the "_64" part of the filename -- that identifies the file as the "64-bit" copy.  The 32-bit will just read "x86-8.1-r6" by contrast</li>
+</ul>
+</li>
+</ul>
+<p>Clicking the link will begin the download!  Wait for VirtualBox's installer and this ISO file to finish
+downloading before moving on to the next steps!</p>
+<h2 id="installing-virtualbox">Installing VirtualBox</h2>
+<h3 id="installing-the-base-program">Installing the Base Program</h3>
+<ol>
+<li>
+<p>Run the VirtualBox installer</p>
+<details class="note">
+<summary>macOS</summary>
+<ol>
+<li>Double click the .dmg</li>
+<li>Double click "VirtualBox.pkg" in the pop-up window</li>
+<li>Click through the install wizard, keeping all settings at their defaults (enter your password if prompted)</li>
+<li>Open System Preferences &gt; Security &amp; Privacy &gt; General</li>
+<li>Unlock the panel by clicking the lock icon in the lower-left corner and plugging in your password</li>
+<li>Click the "Allow" button next to the snippet of text that is asking for permission to allow the "Oracle VM" extension</li>
+<li>Restart your Mac so this extension gets loaded</li>
+</ol>
+</details>
+<details class="note">
+<summary>Windows</summary>
+<ol>
+<li>Double click the .exe</li>
+<li>Click through the install wizard, keeping all settings at their defaults (enter your password if prompted)</li>
+</ol>
+</details>
+</li>
+</ol>
+<h3 id="creating-an-empty-virtual-machine">Creating an Empty Virtual Machine</h3>
+<ol>
+<li>Open the VirtualBox program</li>
+<li>Click on "Tools", then the "New" button (it looks like a very pointy circle)</li>
+</ol>
+<p>In this menu will be a few options we'll need to change.  Set them up like so:</p>
+<ol>
+<li><strong>Name:</strong> This can be anything you want. I chose "Android"</li>
+<li><strong>Machine Folder:</strong> Pick a place on your computer for VirtualBox to store its files.  I made a new "VirtualBox VMs" folder inside my documents folder</li>
+<li><strong>Type:</strong> Linux</li>
+<li><strong>Version:</strong> Linux 2.6 / 3.x / 4.x (64-bit)<ul>
+<li><em>Select "32-bit" if you chose to download a 32-bit ISO earlier!</em></li>
+</ul>
+</li>
+<li>Click "Continue"</li>
+<li>Set the memory size to something like 4096MB.  You may also go as low as 2048MB if necessary; this depends on what your system has available.  If you're unsure, just avoid pushing the slider into the pink/red zones!</li>
+<li>Click "Continue"</li>
+<li>Make sure "Create a virtual hard disk now" is selected</li>
+<li>Click "Create"</li>
+<li>On the next screen, set the Hard disk file type to "VDI (VirtualBox Disk Image)"</li>
+<li>Click "Continue"</li>
+<li>On the next screen, make sure "Dynamically allocated" is selected</li>
+<li>Click "Continue"</li>
+<li>Choose a place for VirtualBox to save the virtual hard disk (this path should be pre-filled for you)</li>
+<li>Set the virtual hard disk size to 8.00 GB</li>
+</ol>
+<h3 id="configuring-the-virtual-machine-startup-options">Configuring the Virtual Machine Startup Options</h3>
+<ol>
+<li>Select your newly created Virtual machine from the VirtualBox sidebar</li>
+<li>Click the "Settings" button in the top menu bar</li>
+<li>Open the "Display" tab</li>
+<li>Change "Graphics Controller" to "VBoxVGA"</li>
+<li>Ensure "3D Acceleration" is OFF</li>
+<li>Click "OK"</li>
+</ol>
+<p>Now your virtual machine is all set!  The next steps will get Android installed.  </p>
+<h2 id="installing-android">Installing Android</h2>
+<h3 id="loading-the-android-iso">Loading the Android ISO</h3>
+<ol>
+<li>Select your Virtual machine from the VirtualBox sidebar</li>
+<li>Click the "Start" button in the top menu</li>
+<li>VirtualBox will ask you to insert a virtual optical disk -- Click the folder icon</li>
+<li>Click the "Add" button</li>
+<li>Find the Android ISO file you downloaded earlier and open it</li>
+<li>Click "Choose"</li>
+<li>Click "Start"</li>
+</ol>
+<h3 id="creating-disk-partitions-installing-android">Creating Disk Partitions &amp; Installing Android</h3>
+<p>The next steps will require you to use your keyboard (arrow keys and the enter key, primarily)</p>
+<ol>
+<li>When prompted, use your down arrow key to highlight the "Installation - Install Android-x86 to harddisk" option</li>
+<li>Press the Enter key (return on macOS)</li>
+<li>Highlight "Create/Modify partitions" with the arrow keys</li>
+<li>Press "Enter"</li>
+<li>Highlight "NO" at the "Do you want to use GPT?" screen using the arrow keys</li>
+<li>Press "Enter"</li>
+<li>Use the arrow keys to highlight the "New" option at the bottom of the screen</li>
+<li>Press "Enter"</li>
+<li>Use the arrow keys to highlight the "Primary" option at the bottom of the screen</li>
+<li>Press "Enter", then "Enter" a second time to confirm the default partition size</li>
+<li>Use the arrow keys to highlight the "Bootable" option at the bottom of the screen</li>
+<li>
+<p>Press "Enter" -- this will set the "Boot" flag in the grey highlighted row in the table up top</p>
+<details class="note" open="open">
+<summary>Not Sure if the Boot Flag Was Set?</summary>
+<p><em>This is a little weird if you haven't created partitions before since the screen behaves differently from the preceding ones.
+ If you examine the table on this screen, you'll see a header row and a data row.  The headers will read things like "Name", "Flags", "Part Type", "FS Type", etc.  Look at the "Flags" column.  If the word "boot" appears beneath it then you're good!  If not, use the arrow keys to highlight the "Bootable" option at the bottom of the screen again and press "Enter".</em></p>
+</details>
+</li>
+<li>
+<p>Use the arrow keys to highlight the "Write" option at the bottom of the screen</p>
+</li>
+<li>Press "Enter"</li>
+<li>The program will ask you to confirm your choice.  This time, type out the word "yes" and press "Enter"</li>
+<li>Once it finishes, use the arrow keys to highlight the "Quit" option at the bottom of the screen</li>
+<li>Press "Enter"</li>
+<li>On the next screen, make sure your new disk is highlighted (it'll read something like <code>sda1 unknown 8.00GB VBOXHARDDISK</code>)</li>
+<li>Press "Enter"</li>
+<li>Use the arrow keys to highlight the "ext4" option</li>
+<li>Press "Enter"</li>
+<li>Use the arrow keys to highlight the "Yes" option</li>
+<li>Press "Enter"</li>
+<li>Use the arrow keys to highlight the "Yes" option again</li>
+<li>Press "Enter" to install the GRUB bootloader</li>
+<li>Use the arrow keys to highlight the "Yes" option again</li>
+<li>Press "Enter" to mark /system as read/write</li>
+<li>Once the installation is finished, highlight "Run Android-x86"</li>
+<li>Press "Enter"</li>
+</ol>
+<p>You'll get dumped to a <code>console:/</code> line briefly.  After a couple seconds you should see the Android boot screen. Nice!  </p>
+<h3 id="ejecting-the-installation-media">Ejecting the Installation Media</h3>
+<p>Once Android boots you'll see their installation wizard.  Before we continue, let's eject the installation media:</p>
+<ol>
+<li>Press Cmd + Q (mac) or Ctrl + Q (windows) to open the Virtual Machine's power management window</li>
+<li>Select "Power off the machine"</li>
+<li>Click "OK"</li>
+<li>Select your Virtual Machine from the VirtualBox sidebar</li>
+<li>Click "Settings"</li>
+<li>Click "Storage"</li>
+<li>Highlight the Android ISO file in the devices list (it'll have a CD icon next to it)</li>
+<li>Click the CD icon next to the "Optical Drive" dropdown in the "Attributes" section on the right</li>
+<li>Choose "Remove Disk from Virtual Drive"</li>
+<li>Click "OK"</li>
+</ol>
+<h3 id="booting-android-for-the-first-time">Booting Android for the First Time</h3>
+<p>The next steps are pretty straightforward:</p>
+<ol>
+<li>Make sure the Virtual Machine is still highlighted and click "Start"</li>
+<li>This time you'll see a console screen with a list of options.  Wait ~5 seconds and Android will start up</li>
+</ol>
+<p>You'll now see the installation wizard again:</p>
+<ol>
+<li>Click "Start"</li>
+<li>On the "Connect to Wi-Fi" screen, click "See All Wi-Fi Networks"</li>
+<li>Select "VirtWifi" from the list (VirtualBox will passthrough your internet connection to Android; you don't actually have to be connected to WiFi if your internet is supplied by an ethernet cable)</li>
+<li>Android will check for updates; if any are available go ahead and install them.  Otherwise this step may take a while so just be patient</li>
+<li>Choose "Don't Copy" on the "Copy apps &amp; data" screen</li>
+<li>
+<p>On the Sign-in screen, enter your Google account credentials</p>
+<ul>
+<li>In my case, I used my work account since the purpose of this VM is to collect the junky apps required by my employer</li>
+</ul>
+<details class="note" open="open">
+<summary>Skipping Google Sign-In</summary>
+<p><em>You may optionally choose to skip the Google Sign-In step.  This may prevent you from installing Play store apps, though.</em>  </p>
+</details>
+</li>
+<li>
+<p>Set your date and time as needed</p>
+</li>
+<li>Optionally, turn on/off Google Services to your liking, scroll down and click "Accept"</li>
+<li>Optionally, add a screen lock pattern/PIN/Password to your VM (in this case, a Password is probably the best option)</li>
+<li>Optionally, skip or configure Google Wallet</li>
+<li>Select "No Thanks" on the "Anything Else?" screen</li>
+<li>Click "Quickstep" on the Home Screen picker</li>
+<li>Click "Always"</li>
+</ol>
+<p>Congratulations! You now have Android running inside a Virtual Machine.  </p>
+<h2 id="updating-the-system">Updating the System</h2>
+<p>By default some of the included apps and services will likely be outdated.  We'll want to update them first
+before doing anything else:</p>
+<ol>
+<li>Open the "Play Store"</li>
+<li>Click the Hamburger menu in the top-left of the Play Store window</li>
+<li>Click "My Apps &amp; Games"</li>
+<li>Highlight the "Updates" tab if it's not selected by default</li>
+<li>Click the "Update All" button, if it's available</li>
+</ol>
+<p>I found the initial downloads can get stuck.  If this happens, try stopping the downloads and updating the apps individually.  You may have to work at this a little bit and a restart or two also can't hurt -- hey, I never said it'd be perfect!  </p>
+<p>You may also need to update Google Play Services separately.  To do that, click/drag from the top status bar downwards using your mouse to reveal the notification shade.  Look for a Google Play Services notification -- click that to open its updater page and apply it.  </p>
+<h2 id="taking-a-snapshot">Taking a Snapshot</h2>
+<p>One of the great benefits of Virtual Machines is the "Snapshot" feature.  This lets you create a permanent
+capture of the state of the system.  Further, you can take multiple of these and jump back-and-forth between them.
+Installed an app or made a change that broke something? Just restore a snapshot!  We're going to take an intial
+snapshot so we can return to a very clean system at any time (and avoid having to do all the complicated steps
+above again if we break something).</p>
+<ol>
+<li>Press Cmd + Q (mac) or Ctrl + Q (windows) to open the power management window</li>
+<li>Choose "Power off the machine"</li>
+<li>Click the "Take" button in VirtualBox's top menu bar (it's the camera icon with a big "+" sign overlaid on it)</li>
+<li>Give the snapshot a name (I used "Base_Install") and add a description if you'd like</li>
+<li>Click "OK"</li>
+</ol>
+<p>Boom! Now you can return your Virtual Machine to this state at any time by highlighting it and clicking the "Restore" button.  </p>
+<h2 id="installing-an-app">Installing an App</h2>
+<p>Now you can go crazy.  Start up the Virtual Machine again and launch the Play Store.  You can click into the search
+bar and use your keyboard and enter key to type out a search.  For example, try finding "Adobe Acrobat".  You can
+click on any of the search results to open the app's landing page.  From there, click the Install button and in a
+few moments you'll see the app icon appear on your home screen.  Clicking on the app icon will open it up, nice!  </p>
+<p>As a caveat, not all apps may work inside the emulator (I had trouble getting Amazon Care to run).  In these
+cases some more involved tinkering may be required, or, in worst cases you may simply be out of luck.  Otherwise
+most things run well (except maybe mobile games!).  </p>
+<p>Hopefully this is useful.  And if you are an IT person, please, don't forget that not everyone is fortunate enough
+to benefit from technology you may take for granted.  </p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2022-12-30
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021 &copy; Kmagameguy - Licensed under GPLv3
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
